@@ -163,7 +163,7 @@ function tabledata_shortcode_fn( $atts = '' ) {
     if($query->have_posts()):
         $content = '<ul>';
         while($query->have_posts()): $query->the_post();
-            // display event
+            // display Post
             $content .= '
                         <li> <b>Employee Name:</b> '.get_post_meta($post->ID, '_employee_name', true).'</li>
                         <li> <b>Date of Joining:</b> '.get_post_meta($post->ID, '_date_of_joining', true).'</li>
