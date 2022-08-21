@@ -9,88 +9,139 @@
   Version: 1.0.0
 */
 
-add_action( 'woocommerce_review_order_after_cart_contents', 'bbloomer_checkout_radio_choice' );
 
-function bbloomer_checkout_radio_choice() {
-      if ( is_admin() && ! defined( 'DOING_AJAX' ) ) return;
+// Registering Plugin Settings Fields
+add_action( 'admin_init', 'bbloomer_shipping_register_settings' );
+function bbloomer_shipping_register_settings() {
+   register_setting( 'bbloomer_shipping_setting_group', 'bbloomer_shipping_setting' );
+}
+
+// Adding Submenu to Woocomerce Tab
+add_action( 'admin_menu', 'bbloomer_shipping_sub_menu' );
+function bbloomer_shipping_sub_menu(){
+	add_submenu_page(
+        'woocommerce',
+        __( 'Shipping Settings' ),
+        __( 'Shipping Settings' ),
+        'manage_woocommerce',
+        'shipping_settings',
+        'shipping_setting_callback'
+    );
+}
+// Call back function for submenu page
+function shipping_setting_callback(){
+  ?>
+	<div>
+  <?php screen_icon(); ?>
+    <h2>Woocomerece Shipping Settings</h2>
+    <form method="post" action="options.php">
+      <?php settings_fields( 'bbloomer_shipping_setting_group' ); ?>
+      <table>
+          <tr valign="top">
+              <th scope="row"><label for="bbloomer_shipping_setting">Disable Shipping Charges</label></th>
+              <?php  $options = get_option( 'bbloomer_shipping_setting' ); ?>
+			  <td><input style="margin-left:30px;" name="bbloomer_shipping_setting" type="checkbox" value="1" <?php checked( '1', get_option( 'bbloomer_shipping_setting' ) ); ?> /></td>
+          </tr>
+      </table>
+      <?php  submit_button(); ?>
+    </form>
+  </div>
+  <?php
+}
+
+
+
+// Enable or Disable Shipping based on saved settings
+if( get_option( 'bbloomer_shipping_setting' ) != 1){
+  add_action( 'woocommerce_review_order_after_cart_contents', 'bbloomer_checkout_radio_choice' );
+  add_action( 'woocommerce_cart_calculate_fees', 'bbloomer_checkout_radio_choice_fee', 20, 1 );
+  add_action( 'wp_footer', 'bbloomer_checkout_radio_choice_refresh' );
+  add_action( 'wp_footer', 'add_shipping_price_in_total' );
+  add_action( 'wp_ajax_woo_get_ajax_data', 'bbloomer_checkout_radio_choice_set_session' );
+  add_action( 'wp_ajax_nopriv_woo_get_ajax_data', 'bbloomer_checkout_radio_choice_set_session' );
+}
+  
+
+  function bbloomer_checkout_radio_choice() {
+    if ( is_admin() && ! defined( 'DOING_AJAX' ) ) return;
 
     global $woocommerce;
 
 
-  $country = WC()->customer->get_shipping_country();
-  $state = WC()->customer->get_shipping_state();
-  $weight = $woocommerce->cart->cart_contents_weight;
-  $price = $cart->cart_contents_total;
-  if($country == "BR"){
+    $country = WC()->customer->get_shipping_country();
+    $state = WC()->customer->get_shipping_state();
+    $weight = $woocommerce->cart->cart_contents_weight;
+    $price = $cart->cart_contents_total;
+    if($country == "BR"){
 
-    // This function retrieve rates from Home Delivery API
-    // The variable below stores the integration key, needed to execute log in on API
-    $curl_handle=curl_init();
-    curl_setopt($curl_handle,CURLOPT_URL, "https://app.homedeliverybr.com/api/v1/services-rates?weight=$weight&height=0&width=0&length=0&unit=kg/cm&country_id=$country&state_id=$state");
-    curl_setopt($curl_handle,CURLOPT_CONNECTTIMEOUT,2);
-    curl_setopt($curl_handle,CURLOPT_RETURNTRANSFER,1);
-    curl_setopt($curl_handle,CURLOPT_HTTPHEADER, array(
-      "accept: application/json",
-      "authorization: Bearer 51c2e1f49cb761409f327351649ac79d-TNnFhqpXjCIfocRU4KFfxWdjW5AvS40TQEkgnywOXMmvcVzP35oI2a996veWHO0r6vd736ITuvVS0KfsP56v5xkadyUetypEz5aLx8S9hjSPcZM43juO-193edf57ef7de5274336b65397ddcf45",
-      "cache-control: no-cache",
-      "content-type: application/json"
-    ));
-    $response = curl_exec($curl_handle);
-    // print_r($response);
-    curl_close($curl_handle);
-    if (empty($response)){
-      print "Nothing returned from url.<p>";
-      print curl_error($curl);
-    }
-    curl_close($curl);
+      // This function retrieve rates from Home Delivery API
+      // The variable below stores the integration key, needed to execute log in on API
+      $curl_handle=curl_init();
+      curl_setopt($curl_handle,CURLOPT_URL, "https://app.homedeliverybr.com/api/v1/services-rates?weight=$weight&height=0&width=0&length=0&unit=kg/cm&country_id=$country&state_id=$state");
+      curl_setopt($curl_handle,CURLOPT_CONNECTTIMEOUT,2);
+      curl_setopt($curl_handle,CURLOPT_RETURNTRANSFER,1);
+      curl_setopt($curl_handle,CURLOPT_HTTPHEADER, array(
+        "accept: application/json",
+        "authorization: Bearer 51c2e1f49cb761409f327351649ac79d-TNnFhqpXjCIfocRU4KFfxWdjW5AvS40TQEkgnywOXMmvcVzP35oI2a996veWHO0r6vd736ITuvVS0KfsP56v5xkadyUetypEz5aLx8S9hjSPcZM43juO-193edf57ef7de5274336b65397ddcf45",
+        "cache-control: no-cache",
+        "content-type: application/json"
+      ));
+      $response = curl_exec($curl_handle);
+      // print_r($response);
+      curl_close($curl_handle);
+      if (empty($response)){
+        print "Nothing returned from url.<p>";
+        print curl_error($curl);
+      }
+      curl_close($curl);
 
-    // After get the rates, this function converts API's response into a json variable, to be read on system.
+      // After get the rates, this function converts API's response into a json variable, to be read on system.
 
-    $rates = json_decode($response,true);
+      $rates = json_decode($response,true);
 
-    $chosen = WC()->session->get('radio_chosen');
-    $chosen = empty( $chosen ) ? (double)WC()->checkout->get_value('radio_choice') : (double)$chosen;
-    $chosen = empty( $chosen ) ? 'no_option' : (double)$chosen;
-    $setting          = WOOMULTI_CURRENCY_F_Data::get_ins();
-   
-	$current_currency = $setting->get_current_currency();
+      $chosen = WC()->session->get('radio_chosen');
+      $chosen = empty( $chosen ) ? (double)WC()->checkout->get_value('radio_choice') : (double)$chosen;
+      $chosen = empty( $chosen ) ? 'no_option' : (double)$chosen;
+      $setting          = WOOMULTI_CURRENCY_F_Data::get_ins();
+      
+      $current_currency = $setting->get_current_currency();
 
-    $options = '';
-    //     $args = array(
-    //       'type' => 'radio',
-    //       'class' => array( 'form-row-wide' ),
-    //       'options' => array(
-    //        'no_option' => 'No Option',
-    //        'option_1' => 'Option 1 ($10)',
-    //        'option_2' => 'Option 2 ($30)',
-    //       ),
-    //       'default' => $chosen
-    //   );
+      $options = '';
+      //     $args = array(
+      //       'type' => 'radio',
+      //       'class' => array( 'form-row-wide' ),
+      //       'options' => array(
+      //        'no_option' => 'No Option',
+      //        'option_1' => 'Option 1 ($10)',
+      //        'option_2' => 'Option 2 ($30)',
+      //       ),
+      //       'default' => $chosen
+      //   );
 
-    echo '<tr><td colspan="2"><div id="checkout-radio">';
-    echo '<h4><b>SHIPPING METHODS</b></h4>';
-    $set_shipping = 0;
-    foreach ($rates["data"] as $rate) {
+      echo '<tr><td colspan="2"><div id="checkout-radio">';
+      echo '<h4><b>SHIPPING METHODS</b></h4>';
+      $set_shipping = 0;
+      foreach ($rates["data"] as $rate) {
 
 
-      // echo json_encode($rate);
-      $label = $rate["shippingServices"]." - "." ".$current_currency.wmc_get_price($rate["cost"], $current_currency);
-      $price = wmc_get_price($rate["cost"], $current_currency);
-      $args = array(
-        'type' => 'radio',
-        'required' => TRUE,
-        'class' => array( 'cart_item', 'shipping_select' ),
-        'options' => array(
-        "$price" => $label,
-        ),
-        'default' => $rates["data"][0]["cost"]
+        // echo json_encode($rate);
+        $label = $rate["shippingServices"]." - "." ".$current_currency.wmc_get_price($rate["cost"], $current_currency);
+        $price = wmc_get_price($rate["cost"], $current_currency);
+        $args = array(
+          'type' => 'radio',
+          'required' => TRUE,
+          'class' => array( 'cart_item', 'shipping_select' ),
+          'options' => array(
+            "$price" => $label,
+          ),
+          'default' => $rates["data"][0]["cost"]
         );
 
         woocommerce_form_field( 'radio_choice', $args, $chosen );
         if($set_shipping == 0){
           WC()->session->set('radio_chosen', wmc_get_price($rate["cost"], $current_currency));
           $woocommerce->cart->shipping_total = wmc_get_price($rate["cost"], $current_currency);
-         $woocommerce->cart->add_fee( __('Shipping Charges', 'woocommerce'), wmc_get_price($rate["cost"], $current_currency));
+          $woocommerce->cart->add_fee( __('Shipping Charges', 'woocommerce'), wmc_get_price($rate["cost"], $current_currency));
           $set_shipping = 1;
 
         }
@@ -99,18 +150,18 @@ function bbloomer_checkout_radio_choice() {
 
       echo '</div><script>
 
-	jQuery(document).ready(function(){
-		
-		
-	
-	});
-</script></td></tr>';
-  }
+      jQuery(document).ready(function(){
+        
+        
+       
+       });
+       </script></td></tr>';
+     }
 
-}
+   }
 
 
- 
+   
 
 
 
@@ -119,55 +170,55 @@ function bbloomer_checkout_radio_choice() {
 // Based on session's "radio_chosen"
 
 #2 Calculate New Total
-if ( ! function_exists( 'wmc_get_price' ) ) {
-	function wmc_get_price( $price, $currency_code = false, $is_shipping = false, $match_decimals = false ) {
+   if ( ! function_exists( 'wmc_get_price' ) ) {
+     function wmc_get_price( $price, $currency_code = false, $is_shipping = false, $match_decimals = false ) {
 
-		if ( is_admin() && ! wp_doing_ajax() ) {
-			return $price;
-		}
+      if ( is_admin() && ! wp_doing_ajax() ) {
+       return $price;
+     }
 
-		$setting             = WOOMULTI_CURRENCY_F_Data::get_ins();
-		$allow_multi_pay     = $setting->get_enable_multi_payment();
-		$equivalent_currency = $setting->get_param( 'equivalent_currency' );
+     $setting             = WOOMULTI_CURRENCY_F_Data::get_ins();
+     $allow_multi_pay     = $setting->get_enable_multi_payment();
+     $equivalent_currency = $setting->get_param( 'equivalent_currency' );
 
-		if ( isset( $price ) ) {
-			$price = (float) str_replace( ',', '.', $price );
-		}
+     if ( isset( $price ) ) {
+       $price = (float) str_replace( ',', '.', $price );
+     }
 
-		if ( ! $allow_multi_pay && is_checkout() && ! $equivalent_currency ) {
-			return $price;
-		}
-		$match_decimals = apply_filters( 'wmc_convert_price_matching_decimals', $match_decimals, $currency_code, $is_shipping );
-		/*Check currency*/
-		$selected_currencies = $setting->get_list_currencies();
-		$current_currency    = $setting->get_current_currency();
+     if ( ! $allow_multi_pay && is_checkout() && ! $equivalent_currency ) {
+       return $price;
+     }
+     $match_decimals = apply_filters( 'wmc_convert_price_matching_decimals', $match_decimals, $currency_code, $is_shipping );
+     /*Check currency*/
+     $selected_currencies = $setting->get_list_currencies();
+     $current_currency    = $setting->get_current_currency();
 
-		if ( ! $current_currency ) {
-			return $price;
-		}
-		if ( $price ) {
-			if ( $currency_code && isset( $selected_currencies[ $currency_code ] ) ) {
-				$price = $price * (float) $selected_currencies[ $currency_code ]['rate'];
-				if ( $match_decimals ) {
-					$price = WOOMULTI_CURRENCY_F_Data::convert_price_to_float( $price, array( 'decimals' => absint( $selected_currencies[ $currency_code ]['decimals'] ) ) );
-				}
-				$price = $is_shipping ? $price : apply_filters( 'wmc_get_price', $price, $currency_code );
+     if ( ! $current_currency ) {
+       return $price;
+     }
+     if ( $price ) {
+       if ( $currency_code && isset( $selected_currencies[ $currency_code ] ) ) {
+        $price = $price * (float) $selected_currencies[ $currency_code ]['rate'];
+        if ( $match_decimals ) {
+         $price = WOOMULTI_CURRENCY_F_Data::convert_price_to_float( $price, array( 'decimals' => absint( $selected_currencies[ $currency_code ]['decimals'] ) ) );
+       }
+       $price = $is_shipping ? $price : apply_filters( 'wmc_get_price', $price, $currency_code );
 //				$price = apply_filters( 'wmc_get_price', $price, $currency_code );
-			} else {
-				$price = $price * (float) $selected_currencies[ $current_currency ]['rate'];
-				if ( $match_decimals ) {
-					$price = WOOMULTI_CURRENCY_F_Data::convert_price_to_float( $price, array( 'decimals' => absint( $selected_currencies[ $current_currency ]['decimals'] ) ) );
-				}
-				$price = $is_shipping ? $price : apply_filters( 'wmc_get_price', $price, $current_currency );
+     } else {
+      $price = $price * (float) $selected_currencies[ $current_currency ]['rate'];
+      if ( $match_decimals ) {
+       $price = WOOMULTI_CURRENCY_F_Data::convert_price_to_float( $price, array( 'decimals' => absint( $selected_currencies[ $current_currency ]['decimals'] ) ) );
+     }
+     $price = $is_shipping ? $price : apply_filters( 'wmc_get_price', $price, $current_currency );
 //				$price = apply_filters( 'wmc_get_price', $price, $current_currency );
-			}
-		}
+   }
+ }
 
 		return (float) $price; //(float)
 	}
 }
 
-add_action( 'woocommerce_cart_calculate_fees', 'bbloomer_checkout_radio_choice_fee', 20, 1 );
+
 
 function bbloomer_checkout_radio_choice_fee( $cart ) {
 
@@ -186,63 +237,61 @@ function bbloomer_checkout_radio_choice_fee( $cart ) {
 // Refresh Checkout if Radio Changes
 // Uses jQuery
 
-add_action( 'wp_footer', 'bbloomer_checkout_radio_choice_refresh' );
+
 
 function bbloomer_checkout_radio_choice_refresh() {
-if ( ! is_checkout() ) return;
-    ?>
-    <script type="text/javascript">
-    jQuery( function($){
-        $('form.checkout').on('change', 'input[name=radio_choice]', function(e){
-            e.preventDefault();
-            var p = $(this).val();
-            $.ajax({
-                type: 'POST',
-                url: wc_checkout_params.ajax_url,
-                data: {
-                    'action': 'woo_get_ajax_data',
-                    'radio': p,
-                },
-                success: function (result) {
-                    $('body').trigger('update_checkout');
-                }
-            });
-        });
-    });
-    </script>
-    <?php
+  if ( ! is_checkout() ) return;
+  ?>
+	<script type="text/javascript">
+	jQuery(function($) {
+		$('form.checkout').on('change', 'input[name=radio_choice]', function(e) {
+			e.preventDefault();
+			var p = $(this).val();
+			$.ajax({
+				type: 'POST',
+				url: wc_checkout_params.ajax_url,
+				data: {
+					'action': 'woo_get_ajax_data',
+					'radio': p,
+				},
+				success: function(result) {
+					$('body').trigger('update_checkout');
+				}
+			});
+		});
+	});
+	</script>
+	<?php
 }
 
 // add shipping prices on auto select of radio button
 
-add_action( 'wp_footer', 'add_shipping_price_in_total' );
+
 
 function add_shipping_price_in_total() {
-if ( ! is_checkout() ) return;
-    ?>
-    <script type="text/javascript">
-    jQuery( function($){
-         $(".shipping_select input").attr("checked", "checked");
-    var radioValue = $("input[name='radio_choice']:checked").val();
-    
-    if (radioValue) {
-        $.ajax({
-            type: 'POST',
-            url: wc_checkout_params.ajax_url,
-            data: {
-                'action': 'woo_get_ajax_data',
-                'radio': radioValue,
-            },
-            success: function(result) {
-                $('body').trigger('update_checkout');
-                return true;
-            }
-        });
-
-    }
-    });
-    </script>
-    <?php
+  if ( ! is_checkout() ) return;
+  ?>
+		<script type="text/javascript">
+		jQuery(function($) {
+			$(".shipping_select input").attr("checked", "checked");
+			var radioValue = $("input[name='radio_choice']:checked").val();
+			if(radioValue) {
+				$.ajax({
+					type: 'POST',
+					url: wc_checkout_params.ajax_url,
+					data: {
+						'action': 'woo_get_ajax_data',
+						'radio': radioValue,
+					},
+					success: function(result) {
+						$('body').trigger('update_checkout');
+						return true;
+					}
+				});
+			}
+		});
+		</script>
+		<?php
 }
 
 
@@ -251,13 +300,12 @@ if ( ! is_checkout() ) return;
 // Add Radio Choice to Session
 // Uses Ajax
 
-add_action( 'wp_ajax_woo_get_ajax_data', 'bbloomer_checkout_radio_choice_set_session' );
-add_action( 'wp_ajax_nopriv_woo_get_ajax_data', 'bbloomer_checkout_radio_choice_set_session' );
+
 
 function bbloomer_checkout_radio_choice_set_session() {
-    if ( isset($_POST['radio']) ){
-        $radio =  $_POST['radio'];
-        WC()->session->set('radio_chosen', $radio );
-    }
-    die();
+  if ( isset($_POST['radio']) ){
+    $radio =  $_POST['radio'];
+    WC()->session->set('radio_chosen', $radio );
+  }
+  die();
 }
