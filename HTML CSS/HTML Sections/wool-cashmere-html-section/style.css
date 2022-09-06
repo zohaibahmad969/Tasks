@@ -1,0 +1,67 @@
+.bw-top-bg-ba{
+    background-image: url(wool-cashmere-horse-cms-background.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 90px 10px;
+    text-align: center;
+    color: white;
+}
+.bw-main-heading-ba{
+    font-size: 28px;
+    margin: 0;
+    margin-bottom: 15px;
+}
+.bw-secondary-heading-ba{
+    font-size: 50px;
+    margin: 0;
+}
+.bw-icons-wrap-ba{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #f2f2f2;
+    justify-content: center;
+    align-items: center;
+}
+.icon-item-ba{
+    text-align: center;
+}
+.bw-icons-wrap-ba .icon-item-ba img{
+    width: 100%;
+    max-width: 250px;
+    margin-bottom:25px;
+}
+.bw-icons-wrap-ba .icon-item-title-ba{
+    font-size: 18px;
+}
+.bw-details-ba{
+    max-width: 84%;
+    margin: auto;
+}
+.bw-details-ba .bw-details-title-ba{
+    font-size: 22px;
+    text-align: center;
+    margin: 40px 10px;
+}
+.bw-details-ba .bw-details-desc{
+    font-size: 22px;
+    color: #757575;
+    margin: 0;
+    line-height: 30px;
+}
+@media only screen and (min-width:768px){
+    .bw-icons-wrap-ba .icon-item-ba{
+        width: 33.333%;
+    }
+}
+@media only screen and (max-width:767px){
+    .bw-main-heading-ba{
+        font-size: 22px;
+    }
+    .bw-secondary-heading-ba{
+        font-size: 38px;
+    }
+    .bw-details-ba .bw-details-desc {
+        font-size: 18px;
+        line-height: 25px;
+    }
+}
