@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background-color: rgb(211, 211, 211);
+        }
+
+        .za-select-multiple {
+            margin-bottom: 10px;
+            max-width: 300px;
+        }
+
+        .za-select-multiple .za-select-options {
+            display: none;
+            background-color: white;
+            padding-bottom: 10px;
+        }
+
+        .za-select-multiple-show {
+            display: block !important;
+        }
+
+        .za-select-label {
+            border-radius: 0px;
+            font-size: 17px;
+            padding: 10px;
+            text-align: left;
+            background-color: white;
+            position: relative;
+            padding-right: 50px;
+        }
+
+        .za-select-label,
+        .za-select-label label {
+            cursor: pointer;
+        }
+
+        .za-select-label:after {
+            content: '>';
+            position: absolute;
+            right: 25px;
+        }
+
+        .za-select-option {
+            display: flex;
+            gap: 11px;
+            padding: 1px 10px;
+            align-items: center;
+            font-size: 17px;
+        }
+
+        .za-select-option input {
+            margin-bottom: 0;
+            width: 18px;
+            height: 18px;
+        }
+
+        .za-select-option input:checked:after {
+            position: relative;
+            display: block;
+            left: -1px;
+            top: -1px;
+            width: 20px;
+            height: 20px;
+            content: "";
+            background-image: linear-gradient(135deg, #B1B6BE 0%, #FFF 100%);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            background-image: url(../images/select-checked.PNG);
+        }
+
+        .fw-700 {
+            font-weight: 700;
+        }
+
+        .za-select-all-option {
+            border-bottom: 1px solid black;
+            padding: 15px 0px;
+            margin: 0 10px 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="za-select-multiple">
+        <div class="za-select-label">
+            <label>Preferred Contact Method</label>
+        </div>
+        <div class="za-select-options">
+            <div class="za-select-option">
+                <input type="checkbox"><label>Email</label>
+            </div>
+            <div class="za-select-option">
+                <input type="checkbox"><label>Text</label>
+            </div>
+            <div class="za-select-option">
+                <input type="checkbox"><label>Phone</label>
+            </div>
+        </div>
+    </div>
+    <div class="za-select-multiple">
+        <div class="za-select-label">
+            <label><span class="fw-700">I'm interested in learning more about:</span> (select multiple)</label>
+        </div>
+        <div class="za-select-options">
+            <div class="za-select-option za-select-all-option">
+                <input type="checkbox">
+                <labe>Select all</label>
+            </div>
+            <div class="za-select-option">
+                <input type="checkbox">
+                <labe>Admission</label>
+            </div>
+            <div class="za-select-option">
+                <input type="checkbox"><label>Majors</label>
+            </div>
+            <div class="za-select-option">
+                <input type="checkbox"><label>Visit campus</label>
+            </div>
+            <div class="za-select-option">
+                <input type="checkbox"><label>Financial aid</label>
+            </div>
+            <div class="za-select-option">
+                <input type="checkbox"><label>Campus life</label>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function () {
+            $(".za-select-multiple .za-select-label").click(function () {
+                var curnt = $(this);
+                curnt.parents(".za-select-multiple").find(".za-select-options").toggleClass('za-select-multiple-show');
+            });
+            $(".za-select-all-option input").click(function () {
+                var curnt = $(this);
+                if ((curnt.parents(".za-select-multiple").hasClass("shown"))) {
+                    curnt.parents(".za-select-multiple").find(".za-select-option input").prop("checked", false);
+                } else {
+                    curnt.parents(".za-select-multiple").find(".za-select-option input").prop("checked", true);
+                }
+                curnt.parents(".za-select-multiple").toggleClass("shown");
+            })
+        });
+    </script>
+
+</body>
+
+</html>
