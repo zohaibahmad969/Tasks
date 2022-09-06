@@ -1,0 +1,491 @@
+:root {
+    --page_dark_blue: #022144;
+    --page_yellow: #EFB944;
+}
+
+@font-face {
+    font-family: "sfProFont";
+    src: url("../Fonts/Mark\ Simonson\ -\ Proxima\ Nova\ Extrabold.otf");
+    src: url("../Fonts/Mark\ Simonson\ -\ Proxima\ Nova.otf");
+    src: url("../Fonts/Mark\ Simonson\ -\ Proxima\ Nova\ Black.otf");
+    src: url("../Fonts/SF-Pro.ttf");
+}
+
+* {
+    font-family: "sfProFont";
+}
+
+header {
+    position: relative;
+}
+
+#headerBanner {
+    background-image: url(../images/banner\ 1\ Desktop.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.main-slider-logo {
+    max-width: 600px;
+    left: 4%;
+    width: 100%;
+    position: relative;
+    top: -30px;
+    display: block;
+}
+
+.header-title {
+    font-size: 60px;
+    margin-bottom: 60px;
+    display: inline-block;
+    position: relative;
+    padding-left: 13%;
+    padding-top: 230px;
+    padding-bottom: 50px;
+    font-weight: 900;
+}
+
+.pg-section {
+    padding: 40px;
+}
+
+.section-title {
+    font-size: 52px;
+    margin-bottom: 60px;
+}
+
+.pg-section p {
+    font-size: 22px;
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+.max-w-600 {
+    max-width: 600px;
+}
+
+.req-form {
+    padding: 60px;
+    background-color: #efefef;
+}
+
+.f-s-37 {
+    font-size: 33px;
+}
+
+.col-dark-blue {
+    color: var(--page_dark_blue);
+}
+
+.fw-800 {
+    font-weight: 800;
+}
+
+.fw-900 {
+    font-weight: 900;
+}
+
+.req-form .form-label {
+    font-size: 18px;
+    color: var(--page_dark_blue);
+    font-weight: 800;
+}
+
+.req-form .form-control {
+    font-size: 22px;
+}
+
+.req-form select {
+    color: grey;
+}
+
+.btn-submit {
+    width: 100%;
+    margin-top: 30px;
+    background: transparent;
+    color: var(--page_dark_blue);
+    border: 1px solid var(--page_dark_blue);
+    font-size: 24px;
+    text-transform: uppercase;
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-submit:hover {
+    background-color: var(--page_dark_blue);
+    color: white;
+}
+
+.col-yellow {
+    color: var(--page_yellow);
+}
+
+.bg-dark-blue {
+    background-color: var(--page_dark_blue);
+}
+
+.p-t-100 {
+    padding-top: 100px;
+}
+
+.p-b-100 {
+    padding-bottom: 100px;
+}
+
+.m-t--95 {
+    margin-top: -95px;
+}
+
+.item-degree {
+    background-color: white;
+}
+
+.item-degree .item-degree-title {
+    color: var(--page_dark_blue);
+    letter-spacing: 5px;
+}
+
+.item-degree p {
+    color:#050105;
+    margin-bottom: 0;
+    font-size: 18px;
+    padding-right: 10px;
+    max-width: 450px;
+}
+
+.padd-degree {
+    padding: 4% 0% 4% 7%;
+}
+
+.item-degree .item-bg {
+    background-size: cover;
+}
+
+.why-section {
+    background-image: url(../images/Why\ OKWU\ section\ desktop.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.yellow-icon-for-bg {
+    position: absolute;
+    top: -24px;
+    width: 200px;
+}
+
+.why-section .section-title {
+    margin-bottom: 30px;
+    margin-top: 60px;
+}
+
+.why-section p {
+    font-size: 22px;
+    font-weight: 300;
+    margin-bottom: 30px;
+    max-width: 600px;
+}
+
+.icon-box-wrap {
+    margin-top: 35px;
+}
+
+.icon-box {
+    margin-top: 20px;
+}
+
+.icon-box-img {
+    width: 90px;
+}
+
+.icon-box-title {
+    color: white;
+    margin-top: 20px;
+    font-weight: 400;
+}
+
+.cta-section {
+    background-image: url(../images/CTA\ BG.jpg);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cta-title {
+    text-align: center;
+    color: var(--page_dark_blue);
+    padding: 62px 20px 120px;
+}
+
+.footer-above-sec p {
+    font-size: 16px;
+    ;
+}
+
+.m-b-0 {
+    margin-bottom: 0 !important;
+}
+
+.f-s-25 {
+    font-size: 24px;
+}
+
+footer p {
+    color: var(--page_dark_blue);
+}
+
+@media (min-width: 1400px) {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl,
+    .container-xxl {
+        max-width: 1220px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .main-slider-logo {
+        max-width: 300px;
+    }
+
+    .header-title {
+        font-size: 42px;
+        margin-bottom: 0;
+        padding-top: 130px;
+    }
+
+    .section-title {
+        font-size: 36px;
+        margin-bottom: 50px;
+    }
+
+    .pg-section p {
+        font-size: 20px;
+    }
+
+    .f-s-37 {
+        font-size: 24px;
+    }
+
+    .req-form .form-label {
+        font-size: 18px;
+    }
+
+    .req-form .form-control {
+        font-size: 16px;
+    }
+
+    .btn-submit {
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    .icon-box-img {
+        width: 100px;
+    }
+
+    .icon-box-title {
+        font-size: 16px;
+    }
+
+    .icon-box-wrap {
+        margin-top: 14px;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .section-title {
+        font-size: 25px;
+        margin-bottom: 30px;
+    }
+
+    .pg-section p {
+        font-size: 15px;
+    }
+
+    .f-s-37 {
+        font-size: 18px;
+        margin-bottom: 15px !important;
+    }
+
+    .req-form {
+        padding: 20px;
+    }
+
+    .req-form .form-label {
+        font-size: 14px;
+    }
+
+    .req-form .form-control {
+        font-size: 12px;
+    }
+
+    .btn-submit {
+        font-size: 15px;
+        margin-top: 10px !important;
+    }
+
+    .item-degree p {
+        padding-right: 10px;
+        font-size: 13px;
+    }
+
+    .yellow-icon-for-bg {
+        top: -19px;
+        width: 156px;
+    }
+
+    .icon-box-img {
+        width: 70px;
+    }
+
+    .icon-box-title {
+        font-size: 12px;
+    }
+
+    .icon-box-wrap {
+        margin-top: 14px;
+    }
+
+    .cta-title {
+        padding: 26px 20px 85px;
+        font-size: 25px;
+    }
+
+    footer {
+        padding-top: 20px !important;
+    }
+
+    .f-s-25 {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    #headerBanner {
+        background-image: url(../images/banner\ 1\ Mob.jpg);
+    }
+
+    .main-slider-logo {
+        max-width: 150px;
+        top: -6px;
+    }
+
+    .pg-section {
+        padding: 40px 15px;
+    }
+
+    .req-form {
+        padding: 0px;
+        background-color: transparent;
+    }
+
+    .f-s-37 {
+        font-size: 28px;
+        margin-bottom: 30px !important;
+    }
+
+    .req-form .form-label {
+        font-size: 16px;
+        color: grey;
+    }
+
+    .req-form .form-control {
+        font-size: 18px;
+    }
+
+    .btn-submit {
+        color: var(--page_yellow);
+        border: 1px solid var(--page_yellow);
+        font-size: 20px;
+    }
+
+    .section-title {
+        font-size: 35px;
+    }
+
+    .pg-section p {
+        font-size: 18px;
+    }
+
+    .m-t--95 {
+        margin-top: 0px;
+    }
+
+    .item-degree p {
+        font-size: 16px;
+    }
+
+    .flex-dir-reverse-mob {
+        flex-direction: column-reverse;
+    }
+
+    .why-section {
+        background-image: url(../images/Why\ OKWU\ section\ Mob.jpg);
+    }
+
+    .cta-title {
+        padding: 13px 20px 66px;
+        font-size: 24px;
+    }
+
+    .padd-0 {
+        padding: 0 !important;
+    }
+
+    .padd-10 {
+        padding: 16px !important;
+    }
+
+    .f-s-25 {
+        font-size: 13px;
+    }
+
+    .icon-box {
+        text-align: center;
+    }
+
+    .icon-box {
+        margin-top: 5px;
+    }
+
+    .icon-box-img {
+        width: 80px;
+    }
+
+    .icon-box-title {
+        font-size: 16px;
+    }
+
+    .video-frame {
+        height: 300px !important;
+    }
+
+    .mob-text-center {
+        text-align: center;
+    }
+
+    .footer-above-sec p {
+        font-size: 14px;
+        ;
+    }
+
+    .footer-logo {
+        max-width: 145px;
+        margin-bottom: 30px;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .flex-dir-reverse-mob .section-title {
+        font-size: 32px;
+    }
+
+    .item-degree p {
+        font-size: 14px;
+    }
+}

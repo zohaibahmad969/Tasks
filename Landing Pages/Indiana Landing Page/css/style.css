@@ -1,0 +1,307 @@
+:root {
+    --page_red: #AB293F; 
+    --page_light_red: #ba123c;
+    --page_dark_red: #902632;
+    --page_sky_blue: #B2D2CA;
+    --page_black: #000000;
+    --page_grey: #6D6E6D;
+}
+@font-face { font-family: "iwuFontGothamBlack"; src: url("../fonts/Gotham-Black.otf"); }
+@font-face { font-family: "iwuFontGothamBold"; src: url("../fonts/Gotham-Bold.otf"); }
+@font-face { font-family: "iwuFontGothamBook"; src: url("../fonts//Gotham-Book.otf"); }
+@font-face { font-family: "iwuFontGothamMedium"; src: url("../fonts//Gotham-Medium.otf"); }
+@font-face { font-family: "iwuFontMyriadProRegular"; src: url("../fonts/MyriadPro-Regular.otf"); }
+@font-face { font-family: "iwuFontTungstenMedium"; src: url("../fonts/Tungsten-Medium.otf"); }
+@font-face { font-family: "iwuFontTungstenSemibold"; src: url("../fonts/Tungsten-Semibold.otf"); }
+@font-face { font-family: "iwuFontZapfDingbats"; src: url("../fonts/ZapfDingbats.ttf"); }
+*{
+    font-family: "iwuFontGothamBook";
+}
+.za-container{
+    max-width:90%;
+    margin: auto;
+}
+header{
+    background-color: var(--page_light_red);
+    padding: 20px;
+}
+.za-banner-wrap .za-banner-bg{
+    background-image: url('../images/Asset\ 13x1.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.za-banner-text-wrap{
+    padding-top: 24%;
+    padding-bottom: 5%;
+    margin-left: -7.2%;
+}
+.za-banner-title{
+    font-family: "iwuFontGothamBook";
+    background-color: rgb(207, 19, 66, 0.6);
+    padding: 10px;
+    text-align: right;
+    backdrop-filter: brightness(0.5);
+    position: relative;
+}
+.za-banner-title-text{
+    font-size: 26px;
+    border: 1px solid white;
+    color: white;
+    display: inline-flex;
+    margin-bottom: 0;
+}
+.za-banner-title-1{
+    max-width: 440px;
+    margin-bottom: 8px;
+}
+.za-banner-title-1 .za-banner-title-text{
+    padding: 10px 50px;
+}
+.za-banner-title-2{
+    max-width: 745px;
+}
+.za-banner-title-2 .za-banner-title-text{
+    padding: 10px 20px;
+}
+.za-box-contact{
+    background-image: url('../images/Asset\ 14x1.jpg');
+    background-position: center;
+    background-size: cover;
+    padding: 20px;
+}
+.za-box-title-bor{
+    font-size: 25px;
+    border: 1px solid white;
+    color: white;
+    margin-bottom: 0;
+    font-weight: 200;
+    text-align: center;
+    padding: 10px;
+}
+.za-box-title-sec{
+    text-align: center;
+    font-size: 21px;
+    color: white;
+    margin: 12px 0px 19px;
+}
+.za-box-contact form{
+    text-align: center;
+    padding: 0 30px;
+}
+.za-box-contact input{
+    background-color: #ddedea!important;
+    border-radius: 0px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    padding: 10px;
+    font-weight: 600;
+}
+.za-box-contact button{
+    background-color: var(--page_light_red);
+    border-radius: 0px;
+    font-weight: 700;
+    color: white;
+    padding: 10px 28px 8px;
+    margin-top: 15px;
+}
+.za-box-details{
+    background-color: #ddedea;
+    padding: 34px 30px;
+}
+.za-box-details .za-box-heading{
+    color: var(--page_light_red);
+    font-size: 32px;
+    font-family: "iwuFontMyriadProRegular";
+    font-weight: 700;
+}
+.za-box-details .za-box-desc{
+    color: var(--page_black);
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.za-box-specializations{
+    background-color: var(--page_grey);
+    padding: 5px 20px 20px;
+}
+.za-box-specializations ul{
+    padding-left:0 ;
+    list-style: none ;
+}
+.za-box-specializations li{
+    padding: 24px 0px;
+    color: white;
+    border-bottom: 1px solid #cecece;
+    font-size: 21px;
+    display: flex;
+    align-items: center;
+}
+.za-box-specializations .za-box-title-spec{
+    font-size: 26px;
+    font-weight: 700;
+}
+.za-box-specializations .za-list-icon{
+    width: 25px;
+    margin-right: 16px;
+}
+.za-box-spec-bg{
+    background-image: url(../images/Asset\ 15x1.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    min-height: 450px;
+}
+.za-box-layout-text{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: rgb(186, 18, 60, 0.6);
+    backdrop-filter: brightness(0.5);
+    padding: 25px;
+}
+.za-box-spec-bg-title{
+    font-size: 60px;
+    font-family: "iwuFontTungstenMedium";
+    color: white;
+}
+.za-box-spec-bg-desc{
+    font-family: "iwuFontGothamMedium";
+    font-size: 21px;
+    color: white;
+    margin-bottom: 0;
+}
+.mr-0{
+    margin: 0;
+}
+.za-box-why-bg{
+    background-image: url(../images//Asset\ 16x1.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    min-height: 450px;
+}
+.za-box-why-text{
+    background-color: #cf1342;
+    padding: 4%;
+}
+.za-box-why-text ul{
+    list-style: none;
+    padding-left: 0;
+}
+.za-box-why-text ul li{
+    padding: 15px 0px;
+    color: white;
+    font-size: 21px;
+    display: flex;
+    font-family: "iwuFontGothamMedium";
+}
+.za-box-why-text .za-list-icon {
+    color: white;
+    margin-right: 20px;
+}
+.za-call-heading{
+    font-size: 31px;
+    text-align: center;
+    font-family: "iwuFontGothamBold";
+    color: var(--page_light_red);
+    margin-bottom: 0;
+    padding: 45px 10px;
+}
+footer{
+    background-color: #9c172f;
+    text-align: center;
+    padding: 30px 10px;
+    color: white;
+}
+footer .za-footer-large-text{
+    font-size: 71px;
+    font-family: "iwuFontTungstenSemibold";
+    margin: 0;
+}
+footer .za-footer-small-text{
+    font-size: 20px;
+    margin-bottom: 0;
+}
+@media only screen and  (max-width: 1150px){
+    .za-box-specializations .za-box-title-spec {
+        font-size: 18px;
+    }
+    .za-box-specializations li {
+        padding: 14px 0px;
+        font-size: 15px;
+    }
+    .za-box-spec-bg-title {
+        font-size: 34px;
+    }
+    .za-box-spec-bg-desc {
+        font-size: 16px;
+    }
+    .za-box-why-text {
+        padding: 2% 3%;
+    }
+    .za-box-why-text ul li {
+        padding: 6px 0px;
+        font-size: 16px;
+    }
+    .za-call-heading{
+        font-size: 20px;
+    }
+    footer .za-footer-large-text{
+        font-size: 45px;
+    }
+    footer .za-footer-small-text {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width:768px){
+    .m-r-20{
+        margin-right: 10px;
+        width: 54%;
+    }
+    .za-row{
+        display: flex;
+    }
+    .m-l-10{
+        margin-left: 10px;
+    }
+    .m-r-10{
+        margin-right: 10px;
+    }
+}
+
+@media only screen and (max-width:767px){
+    .za-banner-text-wrap{
+        padding-top: 300px;
+        margin-left: -16.5%;
+    }
+    .za-banner-title-2 {
+        max-width: 405px;
+    }
+    .za-banner-title-1 {
+        max-width: 245px;
+    }
+    .za-banner-title-text{
+        font-size: 14px;
+    }
+    .za-box-details .za-box-heading {
+        font-size: 26px;
+    }
+    .za-box-layout-text{
+        display: block;
+        padding: 31px;
+    }
+    .za-box-why-text {
+        padding: 8% 8%;
+    }
+}
+@media only screen and (max-width:370px){
+    .za-banner-title-text {
+        font-size: 12px;
+    }
+    .m-r-20 {
+        width: 100%;
+    }
+}

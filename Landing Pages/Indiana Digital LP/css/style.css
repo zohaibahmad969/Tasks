@@ -1,0 +1,360 @@
+:root {
+    --page_red: #AB293F; 
+    --page_light_red: #ba123c;
+    --page_dark_red: #902632;
+    --page_sky_blue: #B2D2CA;
+    --page_black: #000000;
+    --page_grey: #6D6E6D;
+}
+@font-face { font-family: "iwuFontArial"; src: url("../fonts/Arial.ttf"); }
+@font-face { font-family: "iwuFontGothamBold"; src: url("../fonts/Gotham-Bold.otf"); }
+@font-face { font-family: "iwuFontGothamBook"; src: url("../fonts/Gotham-Book.otf"); }
+@font-face { font-family: "iwuFontMarkSimonson"; src: url("../fonts/Mark\ Simonson\ -\ Proxima\ Nova.otf"); }
+@font-face { font-family: "iwuFontMarkSimonsonBold"; src: url("../fonts/Mark\ Simonson\ -\ Proxima\ Nova\ Bold.otf"); }
+@font-face { font-family: "iwuFontSFPro"; src: url("../fonts/SF-Pro.ttf"); }
+@font-face { font-family: "iwuFontSurveyorDisplayBold"; src: url("../fonts/SurveyorDisplay-Bold.otf"); }
+@font-face { font-family: "iwuFontTungstenSemibold"; src: url("../fonts/Tungsten-Semibold.otf"); }
+@font-face { font-family: "iwuFontZapfDingbats"; src: url("../fonts/ZapfDingbats.ttf"); }
+*{
+    font-family: "iwuFontGothamBook";
+}
+.za-container{
+    max-width:80%;
+    margin: auto;
+    margin-bottom: 50px;
+}
+.za-banner-bg{
+    background-image: url('../images/Wes\ Kitten\ -\ Campus\ Aerials\ 001.jpg');
+    background-position: center;
+    background-size: cover;
+    min-height: 596px;
+}
+.header-top{
+    background-color: #d21437;
+    min-height: 100px;
+    border-bottom: 10px solid #9c172f;
+    padding: 20px;
+}
+.za-logo-main{
+    text-align: center;
+    margin-top: -55px;
+}
+.za-box-details{
+    padding: 34px 20px 34px 0px;
+}
+.za-box-main-heading{
+    font-size: 40px;
+    font-family: "iwuFontSurveyorDisplay";
+    font-weight: 700;
+}
+.za-box-heading{
+    font-size: 21px;
+    font-weight: 700;
+    color: #9c172f;
+    font-weight: 700;
+}
+.f-s-28{
+    font-size: 28px;
+}
+.za-box-desc{
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-size: 21px;
+}
+.za-box-contact{
+    background-color: #abd3ca;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+.za-box-title-sec{
+    text-align: center;
+    font-size: 28px;
+    margin: 12px 0px 19px;
+    font-family: "iwuFontSurveyorDisplay";
+    font-weight: 700;
+}
+.za-box-contact form{
+    text-align: center;
+    padding: 0 12px;
+}
+.za-box-contact input{
+    border-radius: 0px;
+    margin-bottom: 10px;
+    font-size: 17px;
+    padding: 10px;
+}
+
+.za-select-multiple{
+    margin-bottom: 10px;
+}
+.za-select-multiple .za-select-options{
+    display: none;
+    background-color: white;
+    padding-bottom: 10px;
+}
+.za-select-multiple-show{
+    display: block!important;
+}
+.za-select-label{
+    border-radius: 0px;
+    font-size: 17px;
+    padding: 10px;
+    text-align: left;
+    background-color: white;
+    position: relative;
+    padding-right: 50px;
+}
+.za-select-label, .za-select-label label{
+    cursor: pointer;
+}
+.za-select-label:after{
+    content: url(../images/select-arrow.png);
+    position: absolute;
+    right: 25px;
+}
+.za-select-option{
+    display: flex;
+    gap: 11px;
+    padding: 1px 10px;
+    align-items: center;
+    font-size: 17px;
+}
+.za-select-option input{
+    margin-bottom: 0;
+    width: 18px;
+    height: 18px;
+}
+.za-select-option input:checked:after {
+    position: relative;
+    display: block;
+    left: -1px;
+    top: -1px;
+    width: 20px;
+    height: 20px;
+    content: "";
+    background-image: linear-gradient(135deg, #B1B6BE 0%, #FFF 100%);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url(../images/select-checked.PNG);
+  }
+.fw-700{
+    font-weight: 700;
+}
+.za-select-all-option{
+    border-bottom: 1px solid black;
+    padding: 15px 0px;
+    margin: 0 10px 15px;
+}
+
+.za-box-contact .btn-submit{
+    background-color: #d21437;
+    border-radius: 0px;
+    font-weight: 700;
+    color: white;
+    padding: 10px 28px 8px;
+    margin-top: 15px;
+    font-size: 21px;
+}
+.za-box-details-2{
+    background-color: #deedea;
+    padding: 25px 35px;
+}
+.za-box-details-2 ul{
+    padding-left: 0;
+    margin: 15px 0;
+}
+.za-box-details-2 ul li{
+    list-style: none;
+    display: flex;
+    font-size: 21px;
+    font-family: "iwuFontSFPro";
+    align-items: baseline;
+}
+.za-box-details-2 ul li:nth-child(1){
+    font-weight: 700;
+}
+.za-box-details-2 ul li .za-list-icon{
+    margin-right: 20px;
+    color: #9c172f;
+    font-size: 25px;
+}
+.m-t-0{
+    margin-top: 0;
+}
+.m-b-0{
+    margin-bottom: 0;
+}
+.f-s-21{
+    font-size: 21px;
+}
+.za-box-bg-2{
+    background-image: url(../images/2018_IWU_InauguralFootballGame_057.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.za-box-hear{
+    background-color:#abd3ca;
+    padding: 4% 23%;
+    text-align: center;
+}
+.za-box-hear-para{
+    font-size: 21px;
+    font-family: "iwuFontSFPro";
+}
+.za-box-hear-heading{
+    font-size: 28px;
+    font-family: "iwuFontSurveyorDisplay";
+    font-weight: 700;
+}
+.za-box-bg-3{
+    background-image: url(../images/IWU\ SHOOT\ -\ SEPTEMBER\ 2016\ -\ 0769.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 458px;
+    margin-bottom: 50px;
+}
+.za-video{
+    width: 100%;
+    margin-top: 50px;
+}
+.mob-visible{
+    display: none;
+}
+footer{
+    background-color: #9c172f;
+    text-align: center;
+    padding: 30px 10px;
+    color: white;
+}
+footer .za-footer-large-text{
+    font-size: 71px;
+    font-family: "iwuFontTungstenSemibold";
+    margin: 0;
+}
+footer .za-footer-small-text{
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+@media only screen and  (max-width: 1250px){
+    .za-box-desc{
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    .za-box-contact {
+        padding: 20px 10%;
+    }
+    
+    .za-box-contact .btn-submit {
+        margin-top: 10px;
+    }
+    .za-box-details-2 {
+        padding: 25px 48px;
+    }
+    
+    
+    .za-box-details-2 ul {
+        margin: 4px 0;
+    }
+    .za-box-hear {
+        padding: 4% 15%;
+    }
+    
+    footer .za-footer-large-text{
+        font-size: 45px;
+    }
+    footer .za-footer-small-text {
+        font-size: 12px;
+    }
+}
+@media only screen and (max-width: 1250px) and (min-width:992px){
+    .za-box-contact {
+        padding: 20px 2%;
+    }
+    .za-box-main-heading{
+        font-size: 28px;
+    }
+    .f-s-28{
+        font-size: 20px;
+    }
+    .za-box-details-2 ul li , .f-s-21{
+        font-size: 14px;
+    }
+    .za-box-bg-3{
+        min-height: 325px;
+    }
+    .za-box-details-2 {
+        padding: 25px 15px;
+    }
+    .za-box-desc, .za-box-heading, .za-box-hear-para{
+        font-size: 18px;
+    }
+    .za-box-hear-heading, .za-box-title-sec{
+        font-size: 22px;
+    }
+    .za-box-contact input, .za-select-label {
+        font-size: 13px;
+    }
+    .za-box-contact .btn-submit {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+}
+@media only screen and (min-width:992px){
+    .za-row{
+        display: flex;
+        gap: 50px;
+    }
+    .za-col-4{
+        width: 33.33333333%;
+    }
+    .za-col-6{
+        width: 50%;
+    }
+    .za-col-8{
+        width: 66.66666667%;
+    }
+}
+
+@media only screen and (max-width:991px){
+    .desktop-visible{
+        display: none;
+    }
+    .mob-visible{
+        display: block;
+    }
+    .za-container{
+        max-width: 100%;
+    }
+    .za-container {
+        margin-bottom: 35px;
+    }
+    .za-box-details {
+        padding: 5px 40px 10px;
+    }   
+    .za-box-bg-2 {
+        min-height: 370px;
+        margin-top: 35px;
+    }
+    .za-video{
+        margin-top: 35px;
+    }
+    .za-box-bg-3{
+        margin-bottom: 35px;
+    }
+    .za-box-contact {
+        margin-bottom: 35px;
+        margin-top: 35px;
+    }
+}
+@media only screen and (max-width:767px){
+   .za-logo-main img{
+    width: 200px;
+   }
+   .za-banner-bg {
+    min-height: 323px;
+    }
+}
