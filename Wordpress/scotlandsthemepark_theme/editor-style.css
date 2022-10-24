@@ -1,0 +1,68 @@
+
+/*
+Description: Used to style the TinyMCE editor.
+*/
+
+/*@import url("assets/fonts/fonts.css");*/
+
+h1,h2,h3,h4,h5,h6,p {clear:both;margin:0;padding:0;}
+
+html .mceContentBody {max-width: 620px;}
+body {font-family:Arial,Helvetica,sans-serif;font-size:16px;color:#4A1260;background:#FFF;line-height:165%;}
+
+/* Headings */
+h1,h2,h3,h4,h5,h6 {color:#4A1260;line-height:120%;font-weight:normal!important;}
+h1 {font-family:Arial,Helvetica,sans-serif;font-size:28px;margin-top:-3px;padding:0 0 25px 0;}
+h2 {font-size:28px;font-weight:bold!important;padding:0 0 15px 0;}
+h3 {font-size:28px;font-weight:bold!important;padding:20px 0 15px 0;}
+h4 {font-size:28px;padding:0 0 3px 0;}
+h5, h6 {font-size:16px;padding:0 0 12px 0;}
+h3.styled {font-family:Arial,Helvetica,sans-serif;font-size:21px;padding:0;color:#445A69;}
+
+a {color:#91428B;}
+a:hover {text-decoration:none;}
+p {padding:0px 0px 17px 0px;}
+strong, .bold {font-weight:bold;}
+hr {height:0;border-top:1px solid #E6E6E6;border-bottom:1px solid #E6E6E6;margin-bottom:10px;}
+
+ul {list-style:none;margin:3px 0px 7px 25px;padding:0px;}
+ul li {margin:0px;padding:0px 0px 10px 20px;position:relative;}
+ul li:before {content:'\25A0';color:#1A3D7F;font-size:16px;position:absolute;left:0;top:-2px;}
+
+ol{margin:3px 0px 7px 35px;padding:0px;}
+ol li {margin:0px;padding:0px 0px 15px 0px;}
+ol li:before {content:'';position:relative;}
+
+cite, em, i {font-style: italic;}
+cite {border: none;}
+
+.txt-small {font-size:14px;line-height:120%;}
+.txt-large {font-size:21px;line-height:130%;}
+
+blockquote {background:rgba(0,0,0,0.1);margin:0 0 15px 0;padding:20px;-webkit-border-radius:10px;-moz-border-radius:10px;border-radius:10px;}
+blockquote p:last-child {padding:0;}
+
+.btn-solid {color:#FFCA44;background:#4A1260;border:2px solid #4A1260;padding:14px 30px;font-size:20px;font-weight:900;text-align:center;text-transform:uppercase;text-decoration:none;line-height:100%;margin:10px 0;position:relative;}
+.btn-solid {display:inline-block;-webkit-border-radius:10px;-moz-border-radius:10px;border-radius:10px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+.btn-solid:hover {color:#FFCA44;text-decoration:none;cursor:pointer;}
+
+.purple-dark, .purple-dark strong, strong .purple-dark {color:#4A1260;}
+.purple-mid, .purple-mid strong, strong .purple-mid {color:#91428B;}
+.yellow, .yellow strong, strong .yellow {color:#FFCA44;}
+
+.separator-add {clear:both;height:1px;line-height:1px;border-top:1px dashed #CCCCCC;margin-top:4px;margin-bottom:14px;}
+
+/* Alignment */
+.alignleft {display:inline;float:left;margin-right:30px;margin-top:5px;margin-bottom:20px;}
+.alignright {display:inline;float:right;margin-left:30px;margin-top:5px;margin-bottom:20px;}
+.aligncenter {clear:both;display:block;margin-left:auto;margin-right:auto;}
+img.alignleft,img.alignright,img.aligncenter {margin-bottom:5px;}
+
+/* Images */
+img[class*="wp-image-"] {height: auto;max-width: 97.5%;}
+img.size-full {width: auto; /* Prevent stretching of full-size images in IE8 */}
+.wp-caption-text {font-size:13px;line-height:130%;}
+
+
+
+
