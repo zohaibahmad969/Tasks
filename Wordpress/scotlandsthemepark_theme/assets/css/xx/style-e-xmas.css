@@ -1,0 +1,39 @@
+/* product page */
+
+.yith-wcbk-booking-form {margin-top:20px;}
+.yith-wcbk-booking-date-icon, .yith-wcbk-select-alt__arrow {display:none;}
+.yith-wcbk-booking-form .yith-wcbk-form-section-duration {display:none;}
+select.yith-wcbk-booking-start-date-time {background:url(../img/arrow-booking.png) center right no-repeat;background-size:30px 10px;cursor:pointer;}
+.yith-booking--simple-style .yith-wcbk-date-picker--inline .ui-datepicker td.ui-datepicker-current-day {background:#ECA918;}
+.yith-booking--simple-style .yith-wcbk-date-picker--inline .ui-datepicker td:not(.ui-state-disabled):hover {background:#F5D389;}
+.yith-booking--simple-style .yith-wcbk-date-picker--inline .ui-widget-content, #yith-wcbk-booking-persons {-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+
+.yith-wcbk-form-section-dates-date-time {margin-top:15px;}
+.yith-wcbk-form-section-persons-wrapper {margin-top:15px;}
+.yith-booking--simple-style .yith-wcbk-booking-form .yith-wcbk-booking-form__label {font-size:16px;font-weight:900;text-transform:uppercase;margin:0;}
+.yith-booking--simple-style .yith-wcbk-booking-form-message p, .yith-booking--simple-style .yith-wcbk-booking-form-message .yith-wcbk-bookable {background:none;color:#4A1260;font-size:16px;line-height:125%;}
+.yith-booking--simple-style .yith-wcbk-booking-form-message .yith-wcbk-bookable strong {text-transform:uppercase;}
+.yith-booking--simple-style .yith-wcbk-people-selector--opened .yith-wcbk-people-selector__totals {background:#ECA918;}
+
+
+.yith-booking--simple-style .yith-wcbk-people-selector {color:#4A1260;}
+.yith-wcbk-people-selector__field__plus, .yith-wcbk-people-selector__field__minus {border:1px solid #4A1260;}
+.yith-wcbk-people-selector__field__plus-wrap, .yith-wcbk-people-selector__field__minus-wrap {color:#4A1260;}
+.yith-wcbk-people-selector__fields-container__footer .yith-wcbk-people-selector__close-handler, .yith-wcbk-people-selector__fields-container__footer .yith-wcbk-people-selector__close-handler:hover {color:#ECA918;}
+
+.woocommerce.yith-booking div.product p.price {margin-top:-10px;padding: 0 0 25px 0!important;}
+
+#yith-wapo-container {margin-bottom:30px;}
+#yith-wapo-container h3 {font-size:24px;padding:0 0 15px 0;}
+.yith-wapo-block .yith-wapo-addon .yith-wapo-option {margin:0 0 15px 0;}
+.yith-wapo-block .yith-wapo-addon .yith-wapo-option .description {color:#91428B;padding:2px 0 0 0;line-height:130%;}
+#wapo-total-price-table {}
+#wapo-total-price-table table {line-height:145%;}
+
+.yith-wapo-addon {border:2px solid #4A1260;padding:15px 20px 10px!important;-webkit-border-radius:10px;border-radius:10px;}
+
+.woocommerce td.product-name dl.variation dt.variation-From {display:none;}
+.woocommerce td.product-name dl.variation dt.variation-To, .woocommerce td.product-name dl.variation dd.variation-To {display:none;}
+.woocommerce td.product-name dl.variation dt.variation-Duration, .woocommerce td.product-name dl.variation dd.variation-Duration {display:none;}
+.woocommerce td.product-name dl.variation dt.variation-Info {display:none;}
+.woocommerce table.my_account_bookings {display:none;}

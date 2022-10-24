@@ -1,0 +1,249 @@
+/* CSS Document */
+
+
+/* -------------------- responsive over-rides -------------------- */
+@media (max-width: 1250px) {
+.page-home #banner-wrapper {height:380px;}
+#banner-wrapper {height:380px;}
+#banner .title-page h1 {font-size:36px;}
+#btn-wrapper .btn-solid {font-size:21px;}
+
+.rdsn-crsl .grid-item .title {font-size:24px;}
+
+#pricing {margin:0;padding:0 30px;}
+
+#grid-wrapper {padding-left:2%;}
+#grid .grid-item, #grid .grid-sizer {width:48%;}
+#grid .grid-item {margin-bottom:2%;}
+#grid .gutter-sizer {width:2%;}
+#e-grid.grid-wrapper {padding:0 1%;}
+#e-grid .grid-item {width:48%;margin:0 1% 2%;}
+#grid .pop-content .title, #e-grid .pop-content .title {font-size:48px;}
+
+.park-open .btn-solid {font-size:21px;}
+#rdsn-ajax-modal .container {width:auto;padding:0 30px;}
+#rdsn-ajax-modal .title-date {padding:50px 0;font-size:36px;}
+.rdsn-calendar .title-month .title {font-size:48px;}
+.rdsn-calendar .title-days .cell {font-size:21px;}
+
+#footer-sites {position:relative;left:auto;bottom:auto;height:160px;}
+#footer-sites .grid-item {width:50%;height:80px;}	
+#offset-footer {display:none;}
+}
+
+@media (max-width: 960px) {
+.container {width:auto;padding:0 30px;}
+#search-title {font-size:32px;}
+
+#social-top {display:none;}
+
+.col-left {float:none;width:100%;margin-bottom:30px;}
+.col-right {float:none;width:100%;}
+
+#ticket-grid .grid-item {width:48%;}
+
+.rdsn-calendar .cell {padding:50px 0;font-size:48px;}
+.rdsn-calendar .title-days .full {display:none;}
+.rdsn-calendar .title-days .mid {display:block;}
+
+#nav-cart-wrapper {right:0;top:85px;}
+
+.sort-menu ul li {margin:0 7px 14px;}
+
+#ride-info .grid-item {width:30%;overflow:visible;}
+
+#pricing .content-pricing .left {float:none;width:100%;}
+#pricing .content-pricing .right {float:none;width:100%;}
+
+#e-grid.amazonia-wood-panel .grid-item .wood-panel img, .section-amazonia .slider-wrapper .wood-panel img, img.w-panel {width:260px;}
+
+#grid .pop-content .title, #e-grid .pop-content .title {font-size:48px;}
+#grid .pop-content .excerpt, #e-grid .pop-content .excerpt {font-size:16px;}
+#grid .pop-content .btn-solid, #e-grid .pop-content .btn-solid {font-size:16px;margin-top:15px;}
+
+#footer-top .title {font-size:48px;}
+#footer-top .text {font-size:18px;}
+#footer-signup {padding:20px 0 16px;}
+#footer-signup .sign-up {font-size:24px;}
+#footer-contact .contact li {display:block;border-right:none;line-height:130%;}
+#social-btm {display:block;}
+#social-btm  .social-links {display:inline-block;}
+}
+
+@media (max-width: 720px) {
+#nav-icon-wrapper, #nav-ticket-wrapper {z-index:10;}
+
+.page-home #banner-wrapper {height:300px;}
+#banner-wrapper {height:300px;}	
+#banner .title-page h1 {font-size:28px;}
+
+#rdsn-crsl-wrapper {padding:0 30px;}
+#btn-crsl-prev, #btn-crsl-next {display:none!important;}
+	
+#grid .pop-content .title, #e-grid .pop-content .title {font-size:28px;}
+#grid .pop-content .excerpt, #e-grid .pop-content .excerpt {font-size:14px;}
+#grid .pop-content .btn-solid, #e-grid .pop-content .btn-solid {font-size:14px;padding:10px 20px;}
+
+#grid-icons .grid-item {width:48%;margin:0 1% 40px 1%;}
+#grid-icons .grid-item:nth-child(4n+1) {animation-delay:0s;}
+#grid-icons .grid-item:nth-child(4n+2) {animation-delay:0.25s;}
+#grid-icons .grid-item:nth-child(4n+3) {animation-delay:0s;}
+#grid-icons .grid-item:nth-child(4n+4) {animation-delay:0.25s;}
+
+#ride-info .grid-item {width:33%;overflow:visible;}
+
+.sort-menu ul li { margin:0 7px 14px 7px;}
+
+#footer-top .title {font-size:36px;}
+#footer-contact .footer-links {font-size:16px;}
+#footer-contact .footer-links li {display:block;margin:0;padding:0 0 12px 0;border-right:none;}
+}
+
+@media (max-width: 640px) {
+#header {background:#FFCA44;}
+#header, #content-offset {height:60px;}
+#nav-icon-wrapper {width:70px;}
+#nav-icon {left:19px;top:19px;}
+#nav-search-wrapper {width:50px;right:50px;}
+#nav-search-wrapper .icon-search {display:none;/*right:14px;top:19px;*/}
+#nav-search-wrapper .icon-search-02 {display:block;position:absolute;right:14px;top:19px;width:24px;height:22px;color:#FFCA44;background:#4A1260;}
+#nav-search-wrapper:hover .icon-search-02 {background:#91428B;cursor:pointer;}
+#nav-icon-text, #nav-search-text, #nav-ticket-text {display:none;}
+#nav-ticket-wrapper {width:50px;}
+#nav-ticket-wrapper .icon-ticket {right:18px;top:13px;}
+#nav-cart-text {top:14px;}
+
+#header.scrolling .logo-main {margin-top:-8px;}
+#header .logo-main img.logo-desktop {display:none;}
+#header .logo-main {margin:-8px auto 0 auto;width:90px;}
+#header .logo-main img.logo-mobile {display:block;width:100%;height:auto;color:#4A1260;}
+
+.page-home #banner-wrapper {height:240px;}
+#banner-wrapper .btn-prev, #banner-wrapper .btn-next {display:none!important;}
+#banner-wrapper {height:240px;}
+#banner .title-page {bottom:20px;}
+#banner .title-page h1 {font-size:24px;}
+#btn-wrapper .btn-solid {font-size:16px;padding:20px 30px;}
+#banner-spacer {height:40px;}
+
+#nav-cart-wrapper {top:65px;}
+
+.woocommerce ul.products {margin:0!important;}
+.woocommerce ul.products li.product {width:100%!important;margin:0 0 50px 0!important;}
+.woocommerce ul.products li.product h2 {font-size:16px!important;}
+
+#search-title {font-size:26px;}
+#search-form .input {height:56px;}
+#search-form .btn-submit {width:56px;height:56px;}
+#search-form::after {font-size:32px;top:18px;}
+
+h1 {font-size:36px;margin-top:-3px;padding:0 0 25px 0;}
+h2 {font-size:24px;padding:0 0 18px 0;}
+h3 {font-size:24px;padding:30px 0 18px 0;}
+h4 {font-size:24px;padding:0 0 15px 0;}
+
+.txt-large {font-size:24px;}
+
+.rdsn-modal .vcenter-inner {width:98%;padding-left:0.5%;}
+.row-mid {padding:25px 0 25px;}
+.row-mid p br {display:none;}
+
+.park-open .btn-solid {line-height:120%;}
+
+#ticket-grid {margin:0;}
+#ticket-grid .grid-item {width:100%;margin:0 0 40px 0;}
+
+.single-tickets .container {padding:0;}
+#pricing {padding:0;}
+#pricing .category .left {width:100%;}
+#pricing .category .right {display:none;}
+#pricing .content-pricing .price-title .col-sm {width:33.33%;text-align:left;font-size:16px;margin-bottom:-5px;}
+#pricing .content-pricing .price-title .col-sm.first {display:none;}
+#pricing .content-pricing .left {padding:0 20px;}
+#pricing .content-pricing .right {padding:0 20px;}
+#pricing .content-pricing .price-row {display:none;}
+#pricing .content-pricing .price-row-mobile {display:block;}
+#pricing .content-pricing .price-row-mobile .col-sm {width:33.33%;padding-top:0;text-align:left;}
+#pricing .content-pricing .price-row-mobile .col-sm.price-note {font-size:16px;}
+#pricing .content-pricing .price-row-mobile .buy-now {text-align:left;margin:8px 0 30px 0;}
+#pricing .content-pricing .price-row-mobile:last-child .buy-now {margin:8px 0 5px 0;}
+#pricing .content-pricing .mini-mobile {display:block;}
+
+#e-grid.amazonia-wood-panel .grid-item .wood-panel img, .section-amazonia .slider-wrapper .wood-panel img, img.w-panel {width:240px;}
+
+ul.height-menu li a {width:80px;height:80px;line-height:80px;font-size:20px;}
+
+#ride-info {white-space:normal;}
+#ride-info .grid-item {width:100%;margin-bottom:30px;}
+
+.rdsn-table {border-collapse:collapse;font-size:14px;}
+
+.rdsn-calendar .title-month .title {font-size:32px;width:auto;}
+#rdsn-ajax-modal .title-date {padding:60px 0 30px;font-size:21px;}
+#rdsn-ajax-modal .title-date .this-year {display:none;}
+.rdsn-calendar .title-days .mid {display:none;}
+.rdsn-calendar .title-days .small {display:block;}
+.rdsn-calendar .cell {font-size:28px;padding:20px 0;}
+.rdsn-calendar .title-month .btn-prev:before, .rdsn-calendar .title-month .btn-next:after {top:18px;}
+
+.grid-rows .rdsn-image {float:none;width:100%;}
+.grid-rows .content {float:none;width:100%;}
+
+.acf-map {height:250px;}
+.map-label {left:-15%!important;top:-40px!important;}
+
+#grid-icons {margin:40px 0 0;}
+#grid-icons .grid-item {width:100%;margin:0 0 40px 0;}
+#grid-icons .grid-item:nth-child(4n+1) {animation-delay:0s;}
+#grid-icons .grid-item:nth-child(4n+2) {animation-delay:0s;}
+#grid-icons .grid-item:nth-child(4n+3) {animation-delay:0s;}
+#grid-icons .grid-item:nth-child(4n+4) {animation-delay:0s;}
+
+#grid-wrapper {padding-left:8%;}
+#grid .grid-item, #grid .grid-sizer {width:92%;}
+#grid .grid-item {margin-bottom:30px;}
+#grid .gutter-sizer {width:0;}
+#e-grid.grid-wrapper {padding:0 30px;}
+#e-grid .grid-item {width:100%;margin:0 0 30px;}
+
+.park-open {margin:-100px 0 60px 0;}
+.park-open img.thumbs-up {width:165px;}
+.park-open .btn-solid {font-size:18px;margin:0 25px;}
+
+#rdsn-ajax-modal .content-ot {font-size:24px;}
+
+#footer-top .left {position:relative;left:auto;top:auto;width:100%;height:200px;}
+#footer-top .right {width:100%;float:none;text-align:center;}
+#footer-sites {height:320px;}
+#footer-sites .grid-item {width:100%;}
+
+#footer-signup .sign-up {font-size:20px;}
+}
+
+@media (max-width: 460px) {
+.woocommerce-checkout #payment div.payment_box .form-row {width:100%!important;}
+}
+
+
+@media (max-width: 350px) {
+}
+
+
+/* valentine product */
+.post-104169 .yith-wapo-option {
+    min-width: 200px !important;
+    max-width: 360px !important;
+    width: 100% !important;
+}
+
+.post-104169 #yith-wapo-option-3-0 textarea {
+    border-radius: 10px;
+    min-width: 200px !important;
+    max-width: 360px !important;
+    width: 100% !important;
+    padding: 15px !important;
+    font-family: 'museo-sans-rounded',Arial,Helvetica,sans-serif;
+    font-size: 16px;
+
+}
+
