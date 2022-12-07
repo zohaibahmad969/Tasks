@@ -11,7 +11,7 @@ function create_post_project() {
 					'edit_item' => __( 'Edit Project' ),
 					'new_item' => __( 'New Project' ),
 					'view_item' => __( 'View Project' )
-				),
+				), 
 			'public' => true,
 			'has_archive' => true,
 			'menu_icon'=>'dashicons-book',
