@@ -1,0 +1,133 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+
+ /* all */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-blue: #71b7e6;
+  --main-purple: #9b59b6;
+  --main-grey: #ccc;
+  --sub-grey: #d9d9d9;
+}
+
+.za-form-wrapper {
+  display: flex;
+  justify-content: center; /*center vertically */
+  align-items: center; /* center horizontally */
+  padding: 10px;
+}
+/* container and form */
+.za-container {
+  max-width: 700px;
+  width: 100%;
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  box-shadow: 0px 0px 15px #dddddd;
+}
+.za-container .za-title {
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+
+.za-container .za-title::before {
+  content: "";
+  position: absolute;
+  height: 3.5px;
+  width: 30px;
+  background: linear-gradient(135deg, var(--main-blue), var(--main-purple));
+  left: 0;
+  bottom: 0;
+}
+
+.za-container form .za-user__details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+/* inside the form user details */
+form .za-user__details .za-input__box {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.za-user__details .za-input__box .details {
+  font-weight: 500;
+  margin-bottom: 5px;
+  display: block;
+}
+.za-user__details .za-input__box input {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid var(--main-grey);
+  padding-left: 15px;
+  font-size: 16px;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+.za-user__details .za-input__box input:focus,
+.za-user__details .za-input__box input:valid {
+  border-color: var(--main-purple);
+}
+
+
+/* submit button */
+form .za-button {
+  height: 45px;
+  margin: 45px 0 20px;
+}
+
+form .za-button input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 5px;
+  background: linear-gradient(135deg, var(--main-blue), var(--main-purple));
+  transition: all 0.3s ease;
+}
+
+form .za-button input:hover {
+  background: linear-gradient(-135deg, var(--main-blue), var(--main-purple));
+}
+.za-preloader{
+    display: none;
+}
+
+
+@media only screen and (max-width: 584px) {
+  .za-container {
+    max-width: 100%;
+  }
+
+  form .za-user__details .za-input__box {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+
+  .container form .za-user__details {
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+
+  .za-user__details::-webkit-scrollbar {
+    width: 0;
+  }
+}
