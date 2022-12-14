@@ -6,6 +6,10 @@ var timeOutValue = 300;
 const headerThemesPopup = document.querySelector('.themes_popup_header');
 self_help_menu_item.addEventListener('mouseover', function handleMouseOver() {
     headerThemesPopup.classList.add('show');
+    if (setTimeToHide_ID) {
+        window.clearTimeout(setTimeToHide_ID);
+        setTimeToHide_ID = 0;
+    }
 });
 headerThemesPopup.addEventListener('mouseover', function handleMouseOver(e) {
     if (setTimeToHide_ID) {
