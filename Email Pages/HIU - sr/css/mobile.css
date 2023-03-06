@@ -1,0 +1,87 @@
+@charset "utf-8";
+/* CSS Document */
+html, body { width: 100%; height: auto; min-height: 100%; margin: 0; padding: 0; }
+body { color: #605e5c; background-color: #15274f; font: normal normal bold 20px/1em 'Nexa', 'Open Sans', sans-serif; text-align: left; position: relative; }
+h1 { font: normal normal bold 32px 'Nexa', 'Open Sans', sans-serif; color: #fbad18; text-align: left; padding-top: 20px; position: relative; }
+.yellow { color: #fbad18; }
+.blue { color: #005596; }
+div#main { background-color: #FFF; width: 100%; height: auto; min-width: 320px; min-height: 100%; max-width: 480px; margin: 0 auto; padding: 0; position: relative; z-index: 0; }
+section#greeting { padding: 0 2%; }
+
+/*Form */
+div#important_div { margin: 3% 0; }
+.option { color: #005596; text-transform: uppercase; }
+div#icons { text-align: left; width: 100%; margin: 0; }
+div.wrapper { width: 100%; margin: 0; padding: 0; }
+#icons div.wrapper { padding: 0.0833%; }
+#icons input[type='checkbox'] { position: absolute; opacity: 0; }
+
+/*Form Fields */
+label { background: url("https://s3.us-east-2.amazonaws.com/rsrc.hope/2021-22/web/img/form_unselected-mob.png") top right no-repeat scroll; padding-right: 13.41666%; height: 34px; display: inline-block; position: relative; width: 90%; }
+input:checked + label { background: url("https://s3.us-east-2.amazonaws.com/rsrc.hope/2021-22/web/img/form_selected-mob.png") top right no-repeat scroll; padding-right: 13.41666%; height: 34px; display: inline-block; position: relative; width: 90%; }
+
+/* Form Option Backgrounds */
+div#academics_div p { background: url("https://s3.us-east-2.amazonaws.com/rsrc.hope/2021-22/web/img/form_academics-mob.png") top left no-repeat scroll; padding-left: 13.41666%; height: 57px; display: inline-block; position: relative; width: 75%; }
+div#servicelearning_div p { background: url("https://s3.us-east-2.amazonaws.com/rsrc.hope/2021-22/web/img/form_servicelearning-mob.png") top left no-repeat scroll; padding-left: 13.41666%; height: 57px; display: inline-block; position: relative; width: 75%; }
+div#athletics_div p { background: url("https://s3.us-east-2.amazonaws.com/rsrc.hope/2021-22/web/img/form_athletics-mob.png") top left no-repeat scroll; padding-left: 13.41666%; height: 57px; display: inline-block; position: relative; width: 75%; }
+div#aid_div p { background: url("https://s3.us-east-2.amazonaws.com/rsrc.hope/2021-22/web/img/form_financialaid-mob.png") top left no-repeat scroll; padding-left: 13.41666%; height: 57px; display: inline-block; position: relative; width: 75%; }
+div#community_div p { background: url("https://s3.us-east-2.amazonaws.com/rsrc.hope/2021-22/web/img/form_community-mob.png") top left no-repeat scroll; padding-left: 13.41666%; height: 57px; display: inline-block; position: relative; width: 75%; }
+div#studyabroad_div p { background: url("https://s3.us-east-2.amazonaws.com/rsrc.hope/2021-22/web/img/form_studyabroad-mob.png") top left no-repeat scroll; padding-left: 13.41666%; height: 57px; display: inline-block; position: relative; width: 75%; }
+
+/* Form - Buttons */
+.actions { display: flex; flex-direction: column; align-self: center; text-align: center; }
+.actions button#submit { cursor: pointer; align-self: center; border: 5px solid #fbad18; border-radius: 35px; background-color: #fbad18; font-family: 'Nexa', 'Open Sans', sans-serif; color: #2d3a6e; font-weight: bold; text-transform: uppercase; padding: 3.33333%; font-size: 19px; display: block; margin: 12px; width: 300px; }
+.actions button#visit { cursor: pointer; align-self: center; background-color: transparent; text-decoration: underline; border: none; font-family: 'Nexa', 'Open Sans', sans-serif; color: #605e5c; font-weight: bold; padding: 3.33333%; font-size: 20px; display: block; margin: 12px; width: 300px; }
+
+/* Thank You Page */
+/* Bullets */
+li { list-style-type: none; font-weight: bold; line-height: 27px; background: url("https://s3.us-east-2.amazonaws.com/rsrc.hope/2021-22/web/img/typ_bullet-mob.png") left center no-repeat; display: inline-block; width: 85%; height: auto; padding-left: 28px; }
+#interests { padding: 2px;padding-left: 0; }
+
+ul#interests.academics li#academics, ul#interests.service_learning li#service_learning, ul#interests.athletics li#athletics, ul#interests.financial_aid li#financial_aid, ul#interests.community li#community, ul#interests.study_abroad li#study_abroad { display:  list-item; }
+p#interests_p.academics, p#interests_p.service_learning, p#interests_p.athletics, p#interests_p.financial_aid, p#interests_p.community, p#interests_p.study_abroad, ul#interests.academics, ul#interests.service_learning, ul#interests.athletics, ul#interests.financial_aid, ul#interests.community, ul#interests.study_abroad { display: block; }
+
+/*Signature */
+section#important { padding: 2%; }
+section#important a { color: #005596; text-decoration: underline; }
+img#signature { width: 147px; height: auto; }
+
+/* Links */
+section.links { background: #15264f; width: 100%; overflow: hidden; }
+div#links_div { padding-left: 16%; }
+section.links p { width: 75%; height: auto; float: none; color: #005596; font-family: 'Nexa', sans-serif; text-transform: uppercase; font-weight: bold; font-size: 16px; text-align: center; }
+section.links a { display: inline-block; width: 100%; height: auto; cursor: pointer; background-color: #fbad18; border: 1px solid #005596; border-radius: 35px; color: #005596; font-weight: bold; text-decoration: none; padding: 2.08333%; }
+#icons p{
+    display: flex!important;
+    justify-content: center;
+    padding-left: 10%!important;
+    align-items: center;
+    width: 90%!important;
+}
+@media only screen and (min-width:900px){
+    .za-bo-1{ width: 130%;margin-left: -15%;}
+}
+@media only screen and (max-width:900px){
+    #icons p {
+        display: flex!important;
+        justify-content: center;
+        padding-left: 14%!important;
+        align-items: center;
+        width: 80%!important;
+        height: auto!important;
+    }
+    #icons p label{
+        height: auto;
+    }
+}
+@media only screen and (max-width:767px){
+    .za-bo-1{ width: 111%;margin-left: -5.6%;}
+    #lp{ padding: 25px;}
+    h1{padding-top: 0;}
+}
+@media only screen and (max-width: 421px) {
+    h1 { font: normal normal bold 20px 'Nexa', 'Open Sans', sans-serif; color: #005596; text-align: left; padding-top: 20px; position: relative; }
+    #icons p {
+        padding-left: 20%!important;
+    }
+}

@@ -1,0 +1,413 @@
+:root {
+    --page_main-red:  #c3002f;
+    --page_grey: #717271;
+    --page_light-grey: #a7a9a2;
+}
+
+@font-face {
+    font-family: "FRABK";
+    src: url("../fonts/FRABK.TTF");
+}
+
+@font-face {
+    font-family: "FRADM";
+    src: url("../fonts/FRADM.TTF");
+}
+
+@font-face {
+    font-family: "FRADMCN";
+    src: url("../fonts/FRADMCN.TTF");
+}
+
+@font-face {
+    font-family: "MyriadProBold";
+    src: url("../fonts/MyriadPro-Bold.otf");
+}
+@font-face {
+    font-family: "MyriadProRegular";
+    src: url("../fonts/MyriadPro-Regular.otf");
+}
+
+@font-face {
+    font-family: "MyriadProSemibold";
+    src: url("../fonts/MyriadPro-Semibold.otf");
+}
+
+@font-face {
+    font-family: "SFPRO";
+    src: url("../fonts/SF-Pro.ttf");
+}
+
+@font-face {
+    font-family: "TimesNewRomanBold";
+    src: url("../fonts/Times\ New\ Roman\ Bold.ttf");
+}
+@font-face {
+    font-family: "ZapfDingbats";
+    src: url("../fonts/ZapfDingbats.ttf");
+}
+
+
+* {
+    font-family: "MyriadProRegular";
+}
+
+.za-main-banner{
+    background: linear-gradient( transparent 0%, rgba(0, 0, 0, 0.5)100%),url(../images/Copy\ of\ MW050422RWC0115.jpg);
+    background-position: center!important;
+    background-repeat: no-repeat!important;
+    background-size: cover!important;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    min-height: 80vh;
+    color: white;
+    padding-bottom: 60px;
+}
+.za-main-banner-title-sm{
+    font-size: 38px;
+    line-height: 45px;
+    margin-bottom: 0;
+    letter-spacing: 7px;
+    text-align: center;
+}
+.za-main-banner-title-lg{
+    font-size: 60px;
+    line-height: 60px;
+    font-family: "TimesNewRomanBold";
+    text-align: center;
+}
+.za-programs{
+    padding-left: 28%;
+}
+.za-program-desc-lg{
+    font-size: 32px;  
+    line-height: 32px; 
+    margin-bottom: 25px;
+    font-family: "TimesNewRomanBold";
+}
+.za-program-desc-sm{
+    font-size: 18px;
+    line-height: 21px;
+    margin-bottom: 30px;
+    font-family: "MyriadProSemibold";
+}
+.za-programs-container > div{
+    margin-bottom: 20px;
+}
+.za-program{
+    background-color: var(--page_main-red);
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+    height: 100%;
+    text-align: center;
+}
+.za-program img{
+    width: 82px;
+}
+.za-program-title{
+    font-size:16px;
+    line-height: 19px;
+    font-family: "MyriadProSemibold";
+}
+.za-lp-form{
+    display: flex;
+    justify-content: center;
+    padding: 9%;
+    border: 1px solid #b3b5b6;
+    border-radius: 2px;
+    margin-left: 14%;
+    margin-right: 14%;
+    flex-direction: column;
+}
+.za-lp-form-title{
+    font-size: 20px;
+    line-height: 25px;
+    color: var(--page_main-red);
+    font-family: "MyriadProSemibold";
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+.za-lp-form-desc{
+    font-size: 20px;
+    line-height: 22px;
+    font-family: "MyriadProSemibold";
+    margin-bottom: 30px;
+}
+.za-lp-form form label{
+    color: #a7a9ab;
+    font-size: 15px;
+    line-height: 24px;
+}
+.za-lp-form form input{
+    border-color: #b0b2b4;
+}
+.za-lp-form form .btn-submit{
+    background-color: var(--page_main-red);
+    width: 100%;
+    font-size: 18px;
+    line-height: 18px;
+    padding: 12px;
+    color: white;
+}
+.col-md-6{
+    padding: 0;
+}
+.za-why-study{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+}
+.p-r-5{
+    padding-right: 5%;
+    padding-left: 28%;
+}
+.p-l-15{
+    padding-left: 12%;
+    padding-right: 8%;
+}
+.za-red-hr{
+    background-color: var(--page_main-red);
+    max-width: 252px;
+    height: 8px;
+    width: 100%;
+}
+.za-why-title{
+    font-size: 18px;
+    line-height: 22px;
+    color: var(--page_main-red);
+    font-family: "MyriadProSemibold";
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+    display: inline-flex;
+    padding-top: 30px;
+}
+.za-why-desc{
+    font-size: 18px;
+    line-height: 22px;
+    font-family: "MyriadProSemibold";
+    margin-bottom: 30px;
+}
+.za-why-desc:last-child{
+    margin-bottom: 0;
+}
+.za-why-list{
+    list-style-type: none;
+    padding-left: 0;
+    font-size: 18px;
+    line-height: 22px;
+    font-family: "MyriadProSemibold";
+    margin-bottom: 30px;
+}
+.za-degree-title{
+    font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+.za-why-list li{
+    display: flex;
+    align-items: center;
+}
+.za-why-list li .za-why-list-icon{
+    color: var(--page_main-red);
+    margin-right: 20px;
+    font-size: 30px;
+    position: relative;
+    bottom: 4px;
+}
+.za-why-banner{
+    min-height: 460px;
+    object-fit: cover;
+    width: 100%;
+}
+.za-bg-form{
+    background: url(../images/Asset\ 321.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-height: 80vh;
+    padding-top: 50px;
+}
+.za-lp-bg-form-title{
+    font-size: 32px;
+    line-height: 32px;
+    text-align: center;
+    color: white;
+}
+.za-lp-bg-form-desc{
+    font-size: 18px;
+    line-height: 30px;
+    color: white;
+    text-align: center;
+    font-weight: 700;
+}
+.za-bg-form form{
+    max-width: 500px;
+    margin: auto;
+}
+.za-bg-form form label{
+    color: white;
+}
+.za-bg-form form input{
+    background-color: white;
+    border-radius: 3px;
+}
+.za-lp-bg-form form .btn-submit{
+    background-color: var(--page_main-red);
+    width: 100%;
+    font-size: 18px;
+    line-height: 18px;
+    padding: 12px;
+    color: white;
+    border: 1px solid white;
+}
+.za-lp-footer{
+    background-color: black;
+    padding: 70px 15px 50px;
+}
+.za-lp-footer p{
+    font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 0;
+    color: var(--page_light-grey);
+}
+.za-lp-footer p a{
+    color: var(--page_main-red);
+    font-weight: 700;
+}
+.only-mob-visible{
+    display: none;
+}
+
+@media (max-width:1023px){
+    .za-programs{
+        padding-left: 25px;
+    }
+    .p-r-5 {
+        padding-right: 25px;
+        padding-left: 25px;
+    }
+    .p-l-15 {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+}
+@media (max-width: 767px){
+    .container-fluid {
+        max-width: 100%;
+    }
+    .za-main-banner {
+        background: linear-gradient( transparent 0%, rgba(0, 0, 0, 1)100%),url(../images/Copy\ of\ MW050422RWC0115.jpg);
+        min-height: 45vh;
+    }
+    .za-main-banner-title-lg {
+        font-size: 42px;
+        line-height: 42px;
+    }
+    .za-main-banner-title-sm {
+        font-size: 26px;
+        line-height: 31px;
+    }
+    .za-program-desc-lg {
+        font-size: 29px;
+    }
+    .za-form-mian-wrap > .row{
+        flex-direction: column-reverse;
+        padding-top: 10px!important;
+    }
+    .za-lp-form {
+        padding: 30px;
+        margin-left: 0;
+        border: 0;
+        margin-right: 0;
+    }
+    .za-programs{
+        padding: 30px;
+    }
+    .za-programs-container > .col-md-4{
+        width: 50%;
+    }
+    .za-why-study-wrap > .row{
+        flex-direction: column-reverse;
+    }
+    .p-r-5 {
+        padding: 25px;
+    }
+    .p-l-15 {
+        padding: 25px;
+    }
+    .za-why-study{
+        padding-top: 50px;
+    }
+    .p-l-15 .col-md-7{
+        margin-top: 20px;
+    }
+    .za-why-banner{
+        min-height: 320px;
+    }
+    .only-mob-visible{
+        display: block;
+    }
+    img.only-mob-visible{
+        width:100%;
+        object-fit: cover;
+        min-height: 314px;
+    }
+    .za-bg-form {
+        background: unset;
+        min-height: auto;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        display: block;
+    }
+    .za-lp-bg-form{
+        padding: 25px;
+    }
+    .za-lp-bg-form-title{
+        padding-top: 20px;
+    }
+    .za-lp-bg-form-title, .za-lp-bg-form-desc{
+        color: black;
+        text-align: left;
+    }
+    .za-bg-form form {
+        max-width: 100%;
+        margin: auto;
+    }
+    .za-bg-form form label {
+        color: #a7a9ab;
+    }
+    .za-lp-footer {
+        padding: 50px 25px 70px;
+    }
+    .za-lp-footer  .row{
+        flex-direction: column-reverse;
+    }
+    .za-lp-footer  .row .col-md-12.mt-5{
+        margin-top: 0!important;
+    }
+    .za-mob-center{
+        text-align: center;
+        margin-top: 70px;
+    }
+    .za-footer-logo{
+        max-width: 411px;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}

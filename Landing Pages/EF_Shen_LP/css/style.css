@@ -1,0 +1,357 @@
+@font-face { font-family: "MyriadProRegular"; src: url("../fonts/MyriadPro-Regular.otf"); }
+@font-face { font-family: "TheSerB7Bol"; src: url("../fonts/the-serif-basic-7.ttf"); }
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@300;400;500;600;700;800&display=swap');
+*{
+    font-family: "TheSerB7Bol";
+}
+.su_lp_header{
+    background-image: url(../images/header.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 70px 10px 50px;
+    text-align: center;
+}
+.su_lp_header .header-logo{
+    max-width: 100%;
+}
+.header-main-title{
+    font-size: 45px;
+    line-height: 54px;
+    color: white;
+    max-width: 800px;
+    margin: 60px auto;
+}
+.su-header-items-area{
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 2px solid #a3bbd6;
+    padding: 30px 20px;
+    margin: 0 5%;
+    justify-content: space-evenly;
+}
+.su-header-item{
+    text-align: left;
+}
+.su-header-item:not(:last-child){
+    border-right: 2px solid #a3bbd6;
+}
+.su-header-item:nth-child(1), .su-header-item:nth-child(3){
+    width: 36%;
+}
+.su-header-item:nth-child(2){
+    width: 28%;
+}
+.su-header-item-title{
+    color:white;
+    font-family: "MyriadProRegular";
+    font-size: 28px;
+}
+.su-header-item:nth-child(1) .su-header-item-title{
+    max-width: 344px;
+    margin-left: auto;
+    padding-right: 14%;
+}
+.su-header-item:nth-child(2) .su-header-item-title{
+    text-align: center;
+}
+.su-header-item:nth-child(3) .su-header-item-title{
+    max-width: 443px;
+    margin-right: auto;
+    padding-left: 14%;
+}
+.su-highlited{
+    color: #a3bbd6;
+    font-weight: 700;
+}
+
+
+.su-form-area{
+    background-image: url(../images/bg1.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.su-container{
+    max-width: 90%;
+    margin: auto;
+}
+.su-container .row{
+    margin-left: 0;
+    margin-right: 0;
+}
+.su-form-wrap{
+    max-width: 400px;
+    padding: 60px 10px 30px;
+}
+.su_lp_form_title{
+    font-family: "MyriadProRegular";
+    font-size: 28px;
+    color: #012d62;
+    font-weight: 700;
+    text-align: center;
+}
+.su_lp_form_desc{
+    font-family: "MyriadProRegular";
+    font-size: 24px;
+    color: #012d62;
+    font-weight: 500;
+    text-align: center;
+}
+.su-form-area form input{
+    background-color: white;
+    font-size: 18px;
+    line-height: 31px;
+    border-radius: 2px;
+    min-height: 35px;
+    font-family: "MyriadProRegular";
+    border: 0;
+    border-bottom: 1px solid #b5c8de;
+    padding-left: 0;
+    padding-bottom: 0px;
+    outline: 0!important;
+    box-shadow: 0px 0px 0px transparent!important;
+}
+.su-form-area form .btn-submit{
+    background-color: #1c426d;
+    color: white;
+    font-size: 22px;
+    line-height: 26px;
+    width: 100%;
+    max-width: 136px;
+    margin: auto;
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+    font-family: "MyriadProRegular";
+}
+.su-form-area form .btn-submit span{
+    font-family: "TheSerB7Bol";
+    color: #a3bbd6;
+    font-weight: 700;
+    margin-left: 12px;
+    font-size: 25px;
+}
+.su-form-area form .btn-submit:hover{
+    background-color: #112f50;
+    color: white;
+}
+.su-video-area{
+    margin-top: 50px;
+}
+.za-video-title{
+    font-size: 39px;
+    line-height: 46px;
+    color: #92002f;
+    max-width: 800px;
+    margin-bottom: 30px;
+}
+.za-video-desc p{
+    font-family: "MyriadProRegular";
+    font-size: 20px;
+    line-height: 27px;
+}
+.su-video{
+    padding-left: 3%;
+}
+.su-video { position: relative; padding-bottom: 56.25%; /* 16:9 */ height: 0; }
+.su-video img { position: absolute; display: block; top: 0; left: 0; width: 100%; height: 100%; z-index: 20; cursor: pointer; }
+.su-video:after { content: ""; position: absolute; display: block; 
+    background: url(play-button.png) no-repeat 0 0; 
+    top: 45%; left: 45%; width: 46px; height: 36px; z-index: 30; cursor: pointer; } 
+.su-video iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+ 
+/* image poster clicked, player class added using js */
+.su-video.player img { display: none; }
+.su-video.player:after { display: none; }
+
+
+.su-accordian{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+.su-accordian .accordion-item{
+    width: 33%;
+    border: 0;
+}
+.su-accordian .accordion-item .accordion-button{
+    font-family: "MyriadProRegular";
+    box-shadow: unset;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #1c426d;
+    color: #1c426d;
+    font-size: 26px;
+    line-height: 25.86px;
+    font-weight: 700;
+}
+.su-accordian .accordion-item .accordion-body{
+    padding-left: 0;
+}
+.accordion-button::after {
+    color: #92002f;
+    font-weight: 800;
+    background-image: url(../images/Asset\ 7.png)!important;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.su-accordian .accordion-button:not(.collapsed)::after {
+    transform: rotate(90deg);
+}
+.su-accordian .accordion-item a{
+    font-family: "MyriadProRegular";
+    color: black;
+    text-decoration: none!important;
+    font-size: 20px;
+    line-height: 27px;
+    display: block;
+    margin-bottom: 6px;
+    padding: 5px 5px 0px 1rem;
+}
+.su-accordian .accordion-item a:hover{
+    background-color: #a3bbd6;
+}
+.su-footer-area{
+    background-image: url(../images/footer\ bg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 120px 20px 100px;
+    text-align: center;
+    margin-top: 70px;
+}
+.top-footer-area{
+    margin-bottom: 70px;
+}
+.su-footer-title{
+    font-size: 40px;
+    line-height: 50px;
+    color: white;
+    margin-bottom: 10px;
+}
+.su-footer-desc{
+    font-family: "MyriadProRegular";
+    font-size: 24px;
+    line-height: 30px;
+    color: white;
+    margin-bottom: 30px;
+}
+.su-footer-bm-txt{
+    font-family: "MyriadProRegular";
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 30px;
+    color: white;
+    margin-bottom: 0px;
+}
+@media only screen and (max-width:1300px) and (min-width:992px){
+    .su-video-area .col-lg-4 {
+        flex: 0 0 auto;
+        width: 50%;
+    }
+    .su-video-area .col-lg-8 {
+        flex: 0 0 auto;
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width:767px){
+    .su_lp_header .header-logo{
+        width: 320px;
+        max-width: 100%;
+    }
+    .su-header-items-area{
+        flex-direction: column;
+        border: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    .su-header-item{
+        width: 100%!important;
+        border: 0!important;
+    }
+    .su-header-item:nth-child(1) .su-header-item-title {
+        max-width: 340px;
+        margin: auto;
+        padding: 25px 30px;
+        border-top: 2px solid #a3bbd6;
+    }
+    .su-header-item:nth-child(2) .su-header-item-title {
+        max-width: 340px;
+        margin: auto;
+        padding: 25px 30px;
+        border-top: 2px solid #a3bbd6;
+        border-bottom: 2px solid #a3bbd6;
+    }
+    .su-header-item:nth-child(3) .su-header-item-title {
+        max-width: 383px;
+        margin: auto;
+        padding-left: 0;
+        padding-top: 30px;
+    }
+    .su-form-area {
+        background-image: url(../images/mob-bg-1.png);
+        padding-bottom: 200px;
+    }
+    .su-form-wrap {
+        max-width: 100%;
+        padding: 60px 30px 30px;
+    }
+    .su-container{
+        max-width: 100%;
+    }
+    .su-container .row > div{
+        padding: 0;
+    }
+    .za-video-content{
+        padding: 25px;
+    }
+    .su-video {
+        padding-left: 0;
+    }
+    .su-accordian {
+        display: block;
+        padding: 25px;
+    }
+    .su-accordian .accordion-item {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .su-footer-logo img{
+        max-width: 185px;
+        margin: auto;
+    }
+    .su-footer-bm-txt {
+        font-size: 14px;
+        line-height: 16.8px;
+        margin-top: 30px;
+    }
+    
+}
+
+@media only screen and (max-width:475px){
+    .su_lp_header .header-logo{
+        width: 320px;
+        max-width: 100%;
+    }
+    .header-main-title {
+        font-size: 25px;
+        line-height: 32px;
+    }
+    .su-header-item:nth-child(1) .su-header-item-title, .su-header-item:nth-child(2) .su-header-item-title, .su-header-item:nth-child(3) .su-header-item-title {
+        padding: 25px 10px;
+        font-size: 20px;
+    }
+   
+    .za-video-content{
+        padding: 25px;
+    }
+    .su-video {
+        padding-left: 0;
+    }
+    .su-video iframe{
+        height: 300px;
+    }
+    
+}

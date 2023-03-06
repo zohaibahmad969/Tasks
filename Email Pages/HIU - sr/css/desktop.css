@@ -1,0 +1,39 @@
+@charset "utf-8";
+/* CSS Document */
+body { font-size: 18px; }
+h1 { font-size: 48px; }
+#break { display: none; }
+
+/* Size Page */
+div#main { max-width: 1200px; }
+
+/* Body */
+main { background: #fff; width: 66.66666%; max-width: 1000px; margin: 0 auto; padding: 1% 0% 4%; }
+
+/*Form Fields */
+div#icons { padding: 0 2%; width: 95%; }
+#icons div.wrapper { padding: 0; }
+label { background: url("https://s3.us-east-2.amazonaws.com/rsrc.hope/2021-22/web/img/form_unselected-mob.png") top right no-repeat scroll; padding-right: 13.41666%; height: 34px; display: inline-block; position: relative; width: 90%; }
+input:checked + label { background: url("https://s3.us-east-2.amazonaws.com/rsrc.hope/2021-22/web/img/form_selected-mob.png") top right no-repeat scroll; padding-right: 13.41666%; height: 34px; display: inline-block; position: relative; width: 90%; }
+
+/* Form - Buttons */
+.actions button#submit { cursor: pointer; align-self: center; border: 5px solid #fbad18; border-radius: 35px; background-color: #fbad18; font-family: 'Nexa', 'Open Sans', sans-serif; color: #2d3a6e; font-weight: bold; text-transform: uppercase; padding: 1.33333% 3.33333%; font-size: 16px; display: block; margin: 12px; width: 300px; }
+.actions button#visit { cursor: pointer; align-self: center; background-color: transparent; text-decoration: underline; border: none; font-family: 'Nexa', 'Open Sans', sans-serif; color: #605e5c; font-weight: bold; padding: 1.33333% 3.33333%; font-size: 18px; display: block; margin: 12px; width: 300px; }
+
+/* Thank You Page */
+header div#banner-logo2 { background: #fff url('https://s3.us-east-2.amazonaws.com/rsrc.hope/2021-22/web/img/hiu_thanksheader.jpg') top center/contain no-repeat scroll; width: 66.66666%; max-width: 1000px; height: 0; margin: 0 auto; padding: 27.86666% 0 0 0; }
+
+/* Links */
+section.links { background: transparent; }
+div#links_div { padding-left: 0; }
+section.links { margin-right: auto; margin-left: auto; width: 83%; overflow: hidden; }
+section.links p { text-align: center; line-height: 1em; font-size: 16px; width: 40%; height: auto; float: left; margin-right: 13%; }
+section.links p:nth-child(2n) { margin-right: 0; }
+section.links a { display: inline-block; width: 100%; height: auto; color: #005596; text-decoration: none; background-color: #ffffff; border: 1px solid #005596; border-radius: 35px; }
+
+
+@media only screen and (min-width: 900px) and (max-width: 1271px) {
+    h1 { font-size: 30px; }
+}
+
+

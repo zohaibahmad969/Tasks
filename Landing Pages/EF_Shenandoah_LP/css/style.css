@@ -1,0 +1,239 @@
+@font-face { font-family: "Arial"; src: url("../fonts/Arial.ttf"); }
+@font-face { font-family: "ArialBold"; src: url("../fonts/Arial\ Bold.ttf"); }
+@font-face { font-family: "Georgia"; src: url("../fonts/Georgia.ttf"); }
+@font-face { font-family: "GothamBold"; src: url("../fonts/Gotham-Bold.otf"); }
+@font-face { font-family: "GothamBook"; src: url("../fonts/Gotham-Book.otf"); }
+@font-face { font-family: "MyriadProRegular"; src: url("../fonts/MyriadPro-Regular.otf"); }
+@font-face { font-family: "PermanentMarker"; src: url("https://s3.amazonaws.com/rsrc.shenandoah/2223_search/search/web/Fonts/PermanentMarker.ttf"); }
+@font-face { font-family: "SourceSansVariableRoman"; src: url("../fonts/SourceSansVariable-Roman.otf"); }
+@font-face { font-family: "TheSerB7Bol"; src: url("../fonts/TheSerB7Bol"); }
+@font-face { font-family: "TheSerB7Bold"; src: url("../fonts/TheSerif\ B7\ Bold"); }
+@font-face { font-family: "ZapfDingbats"; src: url("../fonts/ZapfDingbats.ttf"); }
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@300;400;500;600;700;800&display=swap');
+*{
+    font-family: "SourceSansVariableRoman";
+}
+.su_lp_header{
+    background-image: url(../images/header.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 70px 10px 50px;
+    text-align: center;
+}
+.header-main-title{
+    font-size: 51px;
+    line-height: 42px;
+    font-family: "PermanentMarker";
+    color: #a5bdd8;
+}
+.header-secondary-title{
+    font-size: 45px;
+    line-height: 45px;
+    letter-spacing: -2px;
+    color: white;
+    margin: 25px 10px;
+}
+
+.main-content-area-wrap{
+    background-color: #002d62;
+}
+.main-content-area{
+    background-color: white;
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 80px;
+}
+.main-content-heading{
+    font-size: 34px;
+    line-height: 49px;
+    font-family: 'Bitter', serif;
+    text-align: center;
+    color: #002d62;
+    font-weight: 700;
+}
+.main-content-desc{
+    font-size: 24px;
+    line-height: 32px;
+}
+.su_lp_form_area_wrap{
+    background-image: url(../images/Asset\ 4.png);
+    background-position: center;
+    background-size: cover;
+    padding: 60px;
+}
+.su_lp_form_title{
+    font-size: 42px;
+    font-family: 'Bitter', serif;
+    text-align: center;
+    color: white;
+    font-weight: 700;
+}
+.su_lp_form_desc{
+    font-size: 24px;
+    line-height: 32px;
+    color: white;
+    text-align: center;
+}
+.su_lp_form_area_wrap form{
+    max-width: 450px;
+    margin: 15px auto;
+}
+.su_lp_form_area_wrap form label{
+    color: white;
+    font-size: 15px;
+    line-height: 24px;
+    font-family: "Arial"; 
+}
+.su_lp_form_area_wrap form input{
+    background-color: white;
+    font-size: 18px;
+    line-height: 24px;
+    border-radius: 2px;
+    min-height: 45px;
+}
+.su_lp_form_area_wrap form .btn-submit{
+    background-color: #b52342;
+    color: white;
+    font-size: 22px;
+    line-height: 26px;
+    width: 100%;
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+}
+.su_lp_form_area_wrap form .btn-submit:hover{
+    background-color: #8d0c28;
+    color: white;
+}
+.su-lp-disover-sec{
+    background-color: white;
+    padding: 80px 60px 60px;
+    max-width: 990px;
+    text-align: center;
+    margin: auto;
+}
+.su-lp-discover-title{
+    font-size: 34px;
+    line-height: 50px;
+    font-family: 'Bitter', serif;
+    text-align: center;
+    color: #002d62;
+    font-weight: 700;
+}
+.su-lp-discover-dsec{
+    font-size: 24px;
+    line-height: 32px;
+    text-align: center;
+}
+.su-lp-discover-container > .row{
+    margin-top: 30px;
+}
+.su-lp-discover-item{
+    background-color: #a5bdd8;
+    padding: 6px;
+    font-size: 24px;
+    color: #002d62;
+    line-height: 50px;
+    display: block;
+    margin-bottom: 15px;
+    text-decoration: none;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.su-lp-discover-item:hover{
+    background-color: #547296;
+    color: #002d62;
+}
+.sp-lu-video-sec{
+    background-color: #b52342;
+}
+.sp-lu-video-sec-left-bg{
+    background-image: url(../images/You-Visit-0850.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.sp-lu-video-sec-right-bg{
+    background-image: url(../images/ESports-0011.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.sp-lu-video-sec .container{
+
+}
+.sp-lu-video-sec-text-area{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+}
+.sp-lu-video-sec-title{
+    font-size: 42px;
+    line-height: 50px;
+    font-family: 'Bitter', serif;
+    text-align: center;
+    color: white;
+    font-weight: 700;
+}
+.sp-lu-video-sec-desc{
+    font-size: 24px;
+    line-height: 50px;
+    font-family: 'Bitter', serif;
+    text-align: center;
+    color: white;
+}
+.sp-lu-video{
+    padding: 50px 0px;
+}
+.su-lp-footer{
+    background-color: #005ea0;
+    padding: 30px 10px 60px;
+    color: white;
+    text-align: center;
+}
+.su-lp-footer .row > div{
+    margin-bottom: 20px;
+}
+.footer-social-icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.footer-logo{
+    width: 300px;
+    max-width: 100%;
+}
+.footer-desc{
+    font-size: 18px;
+    line-height: 22px;
+}
+.footer-list-spacer{
+    margin: 0 5px;
+}
+@media only screen and (max-width:767px){
+    .header-logo{
+        width: 100%;
+    }
+    .su_lp_form_area_wrap form {
+        max-width: 100%;    
+        margin: 15px auto;
+    }
+    .sp-lu-video-sec .container{
+        max-width: 100%;
+        padding: 0;
+    }
+    .sp-lu-video{
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+        margin-bottom: -7px;
+    }
+}
+@media only screen and (max-width:475px){
+    .main-content-area, .su_lp_form_area_wrap, .su-lp-disover-sec {
+        padding: 60px 25px;
+    }
+}

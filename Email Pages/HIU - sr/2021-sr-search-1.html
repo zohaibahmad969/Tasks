@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office"
+  xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <!--[if mso]>
+		<style>
+			* {
+				font-family: Verdana, Helvetica, Arial, sans-serif !important;
+			}
+		</style>
+	<![endif]-->
+  <!-- CSS Reset -->
+  <style type="text/css">
+    /* What it does: Remove spaces around the email design added by some email clients. */
+    /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+    html,
+    body {
+      margin: 0 !important;
+      padding: 0 !important;
+      height: 100% !important;
+      width: 100% !important;
+    }
+
+    /* What it does: Stops email clients resizing small text. */
+    * {
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    /* What it does: Forces Outlook.com to display emails full width. */
+    .ExternalClass {
+      width: 100%;
+    }
+
+    /* What is does: Centers email on Android 4.4 */
+    div[style*="margin: 16px 0"] {
+      margin: 0 !important;
+    }
+
+    /* What it does: Stops Outlook from adding extra spacing to tables. */
+    table,
+    td {
+      mso-table-lspace: 0pt !important;
+      mso-table-rspace: 0pt !important;
+    }
+
+    /* What it does: Fixes webkit padding issue. Fix for Yahoo mail table alignment bug. Applies table-layout to the first 2 tables then removes for anything nested deeper. */
+    table {
+      border-spacing: 0 !important;
+      border-collapse: collapse !important;
+    }
+
+    table table table {
+      table-layout: auto;
+    }
+
+    /* What it does: Uses a better rendering method when resizing images in IE. */
+    img {
+      -ms-interpolation-mode: bicubic;
+    }
+
+    /* What it does: Overrides styles added when Yahoo's auto-senses a link. */
+    .yshortcuts a {
+      border-bottom: none !important;
+    }
+
+    /* What it does: Another work-around for iOS meddling in triggered links. */
+    a[x-apple-data-detectors] {
+      color: inherit !important;
+    }
+
+    .btn-ready {
+      cursor: pointer;
+      align-self: center;
+      border: 5px solid #fbad18;
+      border-radius: 35px;
+      background-color: #fbad18;
+      font-family: 'Nexa', 'Open Sans', sans-serif;
+      color: #2d3a6e;
+      font-weight: bold;
+      text-transform: uppercase;
+      padding: 3px;
+      font-size: 10px;
+      display: block;
+      width: 171px;
+      margin: auto;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  </style>
+  <!-- Progressive Enhancements -->
+  <style>
+    /* Custom fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+    @import url('https://s3.us-east-2.amazonaws.com/rsrc.hope/2021-22/web/css/nexa-bold-stylesheet.css');
+  </style>
+  <style type="text/css">
+    /* What it does: Hover styles for buttons */
+    .button-td,
+    .button-td-b,
+    .button-a,
+    .button-b {
+      transition: all 100ms ease-in;
+    }
+
+    .button-td:hover,
+    .button-a:hover {
+      background: #fbad18 !important;
+      border-color: #fbad18 !important;
+    }
+
+    .button-td-b:hover,
+    .button-b:hover {
+      background: #fbad18 !important;
+      border-color: #fbad18 !important;
+    }
+
+    /* What it does: Formats bullets */
+    .td-bullet {
+      width: 14px;
+    }
+
+    .bullet {
+      width: 14px;
+      height: 14px;
+      margin: 3px 0 0;
+      padding: 0;
+      background: transparent;
+      color: #fbad18;
+      font-size: 14px;
+      line-height: 14px;
+      font-weight: 400;
+    }
+
+    /* Media Queries */
+    @media screen and (max-width: 600px) {
+      .email-container {
+        width: 100% !important;
+      }
+
+      /* What it does: Forces elements to resize to the full width of their container. Useful for resizing images beyond their max-width. */
+      .fluid,
+      .fluid-centered {
+        max-width: 100% !important;
+        height: auto !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+
+      /* And center justify these ones. */
+      .fluid-centered {
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+
+      /* Buttons What it does: Forces table cells into full-width rows. */
+      .stack-column,
+      .stack-column-center {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        direction: ltr !important;
+      }
+
+      /* Buttons And center justify these ones. */
+      .stack-column-center {
+        text-align: center !important;
+      }
+
+      .stack-column-center table {
+        margin: 10px 0 0 0 !important;
+      }
+
+      /* Buttons What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+      .center-on-narrow {
+        text-align: center !important;
+        display: block !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        float: none !important;
+        padding: 10px 10px !important;
+      }
+
+      table.center-on-narrow {
+        display: inline-block !important;
+      }
+    }
+
+    @media only screen and (max-width: 640px) {
+      body[yahoo] .deviceWidth {
+        width: 100% !important;
+        padding: 0;
+      }
+
+      body[yahoo] .center {
+        text-align: center !important;
+      }
+    }
+
+    @media only screen and (max-width: 479px) {
+      body[yahoo] .deviceWidth {
+        width: 100% !important;
+        padding: 0;
+      }
+
+      body[yahoo] .center {
+        text-align: center !important;
+      }
+    }
+  </style>
+  <!--[if mso]>
+<style type="text/css">
+.tableClass {
+padding: 10px !important;
+}
+</style>
+<![endif]-->
+
+  <!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">Traba McQuary</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:_ExtendedDescription msdt:dt="string"></mso:_ExtendedDescription>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">Traba McQuary</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ComplianceAssetId msdt:dt="string"></mso:ComplianceAssetId>
+<mso:TriggerFlowInfo msdt:dt="string"></mso:TriggerFlowInfo>
+<mso:ContentTypeId msdt:dt="string">0x0101006B5026A6E2C63146A79A14183048D6E0</mso:ContentTypeId>
+<mso:_SourceUrl msdt:dt="string"></mso:_SourceUrl>
+<mso:_SharedFileIndex msdt:dt="string"></mso:_SharedFileIndex>
+<mso:MediaLengthInSeconds msdt:dt="string"></mso:MediaLengthInSeconds>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+
+<body bgcolor="#e0e0e0" width="100%" style="margin: 0;" yahoo="yahoo">
+  <table bgcolor="#e0e0e0" cellpadding="0" cellspacing="0" border="0" height="100%" width="100%"
+    style="border-collapse:collapse;" role="presentation">
+    <tbody>
+      <tr>
+        <td>
+          <center style="width: 100%;">
+            <!-- Visually Hidden Preheader Text : BEGIN -->
+            <div
+              style="display:none !important; visibility: hidden; mso-hide:all; font-size:1px; line-height:1px; max-height:0px; max-width:0px; opacity:0; overflow:hidden;">
+              Join the HIU community and make your dreams become reality. We’re
+              committed to helping you become all that you want to be and all God has called you to be.
+            </div>
+            <span
+              style="display:none !important; visibility:hidden; mso-hide:all; font-size:1px; line-height:1px; max-height:0px; max-width:0px; opacity:0; overflow:hidden;">
+              <!--EOA COMMENT: This snippet of white space has been added to ensure short preview text does not run into the following text of your email.-->&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
+            </span>
+            <!-- Visually Hidden Preheader Text : END -->
+            <!-- Email Body : BEGIN -->
+            <table cellspacing="0" cellpadding="0" border="0" align="center" bgcolor="#ffffff" width="600"
+              class="email-container" role="presentation">
+              <tbody>
+                <!-- Hero Image, Flush : BEGIN -->
+                <tr>
+                  <td class="full-width-image"><img
+                      src="https://s3.us-east-2.amazonaws.com/rsrc.hope/2021-22/email/hiu-sr21s1-banner.jpg" width="600"
+                      alt="Experience Hope #HIUBOUND" border="0" align="center"
+                      style="width: 100%; max-width: 600px; height: auto;"></td>
+                </tr>
+                <!-- Hero Image, Flush : END -->
+                <!-- Honeypot : BEGIN -->
+                <tr>
+                  <td><a href="https://##subdomain##.##domain##/##purl##/honeypot.html"
+                      style="color: transparent; font-size: 0; display: none !important" aria-hidden="true">*</a></td>
+                </tr>
+                <!-- Honeypot : END -->
+                <!-- 1 Column Text : BEGIN -->
+                <tr>
+                  <td style="padding: 20px 40px;">
+                    <h1
+                      style="text-align: left; font-family: 'Nexa', 'Open Sans', Verdana, 'Helvetica', Arial, sans-serif; font-size: 18px; color: #005596; font-weight: bold; mso-height-rule: exactly; line-height: 1;">
+                      Hi ##prefname##!</h1>
+                    <p
+                      style="text-align: left; font-family: 'Open Sans', Verdana, 'Helvetica', Arial, sans-serif; font-size: 14px; color: #605e5c; font-weight: 400; mso-height-rule: exactly; line-height: 1.6;">
+                      Hope International University offers a <b>variety</b> of programs that provide
+                      <b>many</b> different avenues for finding your <b>passion</b> and <b>preparing</b> you for
+                      the working world. <b>Small class sizes</b> allow our faculty to really get to know
+                      <b>you</b>, your <b>dreams</b>, and your <b>goals</b>.
+                      We provide a balanced curriculum in major and minor fields and selected
+                      electives to <b>maximize</b> each student’s academic experience. Through
+                      one-on-one advising, we provide all the necessary resources to help you
+                      earn your degree and ultimate success!</p>
+
+
+                  </td>
+                </tr>
+                <tr style="background-color: #fef3dc;">
+                  <td style="text-align: center;padding:30px;">
+                    <h2
+                      style="font-size: 16px;line-height: 24px;color: #005596;font-family: 'Nexa', 'Open Sans', Verdana, 'Helvetica', Arial, sans-serif;font-weight: bold;">
+                      HOPE your way forward and learn how we can help you earn
+                      the degree and success you deserve!</h2>
+                    <a href='https://experiencehope.hiu.edu/sr'
+                      class="btn-ready">I’M READY</a>
+                  </td>
+                </tr>
+                <!-- 1 Column Text : END -->
+                <!-- Footer Image, Flush : BEGIN -->
+                <tr>
+                  <td class="full-width-image"><img
+                      src="https://s3.us-east-2.amazonaws.com/rsrc.hope/2021-22/email/hiu-sr-email-footer.jpg"
+                      width="600" alt="Think Biblically, Serve Compassionately, Lead Courageously" border="0"
+                      align="center" style="width: 100%; max-width: 600px; height: auto;"></td>
+                </tr>
+                <!-- Footer Image, Flush : END -->
+                <!-- Email Footer : BEGIN -->
+                ##footer_s##
+                <!-- Email Footer : END -->
+              </tbody>
+            </table>
+            <!-- Email Body : END -->
+            <!-- Email Disclaimer : BEGIN -->
+            <table align="center" width="600" class="email-container" role="presentation">
+              <tbody>
+                <tr style="background-color: white;">
+                  <td style="padding: 20px 50px;"><img src="images/hiu-logo.png"></td>
+                  <td style="padding: 20px 50px;font-size: 10px;line-height: 18px;text-align:right;color: #005596;font-family: 'Nexa', 'Open Sans', Verdana, 'Helvetica', Arial, sans-serif;font-weight: bold;">
+                    2500 E. Nutwood Avenue<br>
+                    Fullerton, CA 92831<br>
+                    <span class="font-weight:bold">1-888-352-HOPE (4673)</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    colspan="2" style="padding: 20px 40px; width: 100%; font-size: 10px; font-weight: normal; font-family: Arial, Helvetica, sans-serif; color: #605e5c; text-align: left; background-color: #fff;">
+                    <p>This message is being sent to ##firstname## ##lastname## at <a href="mailto:##email##"
+                        style="color: #605e5c; text-decoration: none;">##email##</a>. If you are not ##firstname##
+                      ##lastname## or no longer wish to receive messages of this nature, please <a
+                        href='##Unsubscribe RedirectURL="https://s3-us-west-1.amazonaws.com/rsrc.enrollmentfuel.com/unsubscribed.htm" ##'
+                        style="color: #000000; font-weight: bold; text-transform: uppercase; text-decoration: underline;">unsubscribe</a>.<br><br>sr21s1a
+                    </p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- Email Disclaimer : END -->
+          </center>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>
