@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charSet="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <style>
+        .za-preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+            transition: background 2s ease-in-out;
+        }
+        
+        .za-move {
+            animation: za-move 0.7s ease-in-out 0.3s forwards;
+            position: relative;
+            animation-iteration-count: infinite;
+        }
+        
+        .za-enlarge {
+            animation: za-enlarge 1s cubic-bezier(0.5, 0, 0.5, 1) 0.1s forwards;
+        }
+        
+        @keyframes za-move {
+            0% {
+                top: 0;
+            }
+            25% {
+                top: 30px;
+            }
+            75% {
+                top: -30px;
+            }
+            100% {
+                top: 0;
+            }
+        }
+        
+        @keyframes za-enlarge {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(100);
+            }
+        }
+    </style>
+</head>
+
+<body style="background-color: pink;">
+    <h1 style="font-size: 20px;margin-top: 0;margin-bottom: 0;">This is dummy text</h1>
+    <img class="fit-cover w-full h-full rounded-sm border-b-2 border-mandarin" src="https://stay-one-degree.imgix.net/v2/assets/home/image/mandarin-oriental/alpine-escape.jpg?max-h=500&amp;max-w=750&amp;fit=crop&amp;auto=format,compress">
+    <div class="za-preloader ">
+        <svg class="za-move" width="72" height="73" viewBox="0 0 72 73" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M35.9488 73C30.5462 73 25.6442 71.9871 21.2478 69.9598C16.848 67.9319 13.0738 65.1781 9.92227 61.6958C6.77076 58.2157 4.32908 54.2946 2.59833 49.9342C0.865928 45.5753 0 41.0972 0 36.5011C0 31.7029 0.917962 27.1216 2.75443 22.7628C4.58815 18.4023 7.11746 14.516 10.3385 11.1021C13.5591 7.6904 17.3667 4.98583 21.767 2.99107C26.164 0.998448 30.9964 0 36.2599 0C41.5924 0 46.4588 1.05029 50.8568 3.14393C55.256 5.23971 59.0128 8.04531 62.1298 11.558C65.2473 15.0751 67.6698 18.9946 69.4033 23.3197C71.133 27.6476 72 32.1075 72 36.7031C72 41.435 71.0985 45.9815 69.2987 50.3404C67.4967 54.7008 64.9877 58.5872 61.7661 62.001C58.545 65.4133 54.7357 68.1008 50.3371 70.0608C45.9384 72.0219 41.1438 73 35.9488 73ZM14.546 36.5011C14.546 39.6097 15.0291 42.6195 16.0002 45.5234C16.9696 48.4322 18.3728 51.017 20.2077 53.2801C22.0425 55.5469 24.2936 57.3348 26.9609 58.6556C29.6266 59.9715 32.6576 60.6317 36.0523 60.6317C39.5149 60.6317 42.5974 59.9384 45.2987 58.5524C48.0005 57.1681 50.2505 55.3096 52.0514 52.9765C53.8523 50.6434 55.221 48.0447 56.1565 45.1691C57.0909 42.2977 57.5586 39.4077 57.5586 36.5011C57.5586 33.3924 57.0547 30.4013 56.0529 27.5279C55.0468 24.6565 53.6261 22.0866 51.7923 19.8214C49.9564 17.5589 47.7053 15.7656 45.0391 14.4481C42.3728 13.1295 39.3774 12.4715 36.0523 12.4715C32.5201 12.4715 29.4196 13.1648 26.7544 14.5491C24.0865 15.9351 21.8524 17.7796 20.0527 20.0753C18.2507 22.3753 16.8842 24.9414 15.9487 27.7818C15.0143 30.6205 14.546 33.5266 14.546 36.5011Z" fill="currentColor"></path></svg>
+    </div>
+
+    <script>
+        window.setTimeout(function() {
+            document.querySelector(".za-preloader svg").classList.remove("za-move");
+            document.querySelector(".za-preloader svg").classList.add("za-enlarge");
+            document.querySelector(".za-preloader").style.backgroundColor = "transparent";
+            window.setTimeout(function() {
+                document.querySelector(".za-preloader").style.display = "none";
+            }, 2000);
+        }, 2000);
+    </script>
+</body>
+
+</html>
