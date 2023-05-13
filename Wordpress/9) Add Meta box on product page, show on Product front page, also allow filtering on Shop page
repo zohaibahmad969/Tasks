@@ -1,0 +1,94 @@
+<?php
+
+
+ // Add custom meta box for delivery days
+function add_delivery_days_meta_box() {
+    add_meta_box(
+        'delivery-days',
+        'Delivery Days',
+        'delivery_days_meta_box_callback',
+        'product',
+        'normal',
+        'high'
+    );
+}
+add_action('add_meta_boxes', 'add_delivery_days_meta_box');
+
+// Save delivery days data
+function save_delivery_days_data($post_id) {
+    if (isset($_POST['delivery-days'])) {
+        update_post_meta(
+            $post_id,
+            '_delivery_days',
+            sanitize_text_field($_POST['delivery-days'])
+        );
+    }
+}
+add_action('save_post_product', 'save_delivery_days_data');
+
+// Display delivery days field
+function delivery_days_meta_box_callback($post) {
+    $delivery_days = get_post_meta($post->ID, '_delivery_days', true);
+    ?>
+    <label for="delivery-days">Delivery Days:</label>
+    <input type="text" name="delivery-days" id="delivery-days" value="<?php echo esc_attr($delivery_days); ?>">
+    <?php
+}
+
+
+// Add filter options to shop page
+add_action('woocommerce_before_shop_loop', 'add_delivery_days_filter');
+function add_delivery_days_filter() {
+    echo '<div class="delivery-days-filter woocommerce-ordering" style="display:none;margin-left: 1em;">';
+    echo '<select name="delivery_days_filter" class="orderby">';
+    echo '<option value="">Filter by delivery days</option>';
+    echo '<option value="all">All</option>';
+    echo '<option value="4-8">4-8 days</option>';
+    echo '</select>';
+    echo '</div>';
+    echo "<script>document.addEventListener('DOMContentLoaded', function() {
+            var deliveryDaysFilter = document.querySelector('.delivery-days-filter');
+            var shopControlBar = document.querySelector('.shop-control-bar');
+            if (deliveryDaysFilter && shopControlBar) {
+                shopControlBar.appendChild(deliveryDaysFilter);
+                deliveryDaysFilter.style.display = 'block';
+            }
+            var deliveryDaysFilterSelect = document.querySelector('.delivery-days-filter select');
+            if (deliveryDaysFilterSelect) {
+                deliveryDaysFilterSelect.addEventListener('change', function() {
+                    var filterValue = this.value;
+                    var urlParams = new URLSearchParams(window.location.search);
+                    urlParams.set('delivery_days_filter', filterValue);
+                    var newUrl = window.location.pathname + '?' + urlParams.toString();
+                    window.location.href = newUrl;
+                });
+            }
+        });
+        </script>";
+}
+add_action('pre_get_posts', 'filter_products_by_delivery_days');
+function filter_products_by_delivery_days($query) {
+    if (!is_admin() && $query->is_main_query()) {
+        if (isset($_GET['delivery_days_filter']) && $_GET['delivery_days_filter'] !== "all" ) {
+            $meta_query = array(
+                array(
+                    'key' => '_delivery_days',
+                    'value' => $_GET['delivery_days_filter'],
+                    'compare' => '=',
+                    'type' => 'NUMERIC'
+                )
+            );
+            $query->set('meta_query', $meta_query);
+        }
+    }
+}
+
+// Add delivery days to product template
+add_action('woocommerce_single_product_summary', 'add_delivery_days_to_product_template', 5);
+function add_delivery_days_to_product_template() {
+    global $product;
+    $delivery_days = get_post_meta($product->get_id(), '_delivery_days', true);
+    if (!empty($delivery_days)) {
+        echo '<div class="delivery-days">' . __('<b>I fjärrlager: </b>Leveranstid', 'woocommerce') . ' ' . esc_html($delivery_days) . ' arbetsdagar.</div>';
+    }
+}
