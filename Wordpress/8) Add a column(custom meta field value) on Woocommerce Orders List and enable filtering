@@ -1,0 +1,25 @@
+<?php
+
+// Add a column(custom meta field value) on Woocommerce Orders List and enable filtering
+
+
+// Add column "Pickup Date" on Woocommerce Orders List
+add_filter( 'manage_edit-shop_order_columns', 'add_pickup_date_column_to_order_list' );
+function add_pickup_date_column_to_order_list( $columns ) {
+    $columns['pickup_date'] = __( 'Pickup Date', 'textdomain' );
+    return $columns;
+}
+
+//Add data to that Column
+add_action( 'manage_shop_order_posts_custom_column', 'add_pickup_date_to_order_list' );
+function add_pickup_date_to_order_list( $column ) {
+    global $post;
+    if ( 'pickup_date' === $column ) {
+        $pickup_date = get_post_meta( $post->ID, 'order_pickup_date', true );
+        if ( ! empty( $pickup_date ) ) {
+            echo esc_html( $pickup_date );
+        } else {
+            echo '-';
+        }
+    }
+}
