@@ -1,0 +1,103 @@
+<?php
+
+add_action( 'rest_api_init', function () {
+    register_rest_route( 'myplugin/v1', '/add_royalty_points', array(
+        'methods' => 'POST',
+        'callback' => 'add_royalty_points',
+    ) );
+    
+    register_rest_route( $this->nameSpace . '/api/v1/' . $this->module, '/get_royalty_points', array(
+				'methods'             => WP_REST_Server::ALLMETHODS,
+				'callback'            => 'streamit_get_royalty_points',
+				'permission_callback' => '__return_true'
+			) );
+} );
+
+
+// Calculating Royality Points
+function streamit_add_royalty_points_on_video_watch( $request ) {
+		$user_id = $request->get_param( 'user_id' );
+		$video_id = $request->get_param( 'video_id' );
+		if ( ! $user_id || ! $video_id ) {
+			return array(
+				'status' => 400,
+				'data' => array( 'message' => 'User ID and Video ID are required.' )
+			);
+		}
+		$points = get_user_meta( $user_id, 'Royalty Points', true );
+		if ( ! $points ) {
+			$points = 0;
+		}
+		$video_points = get_user_meta( $user_id, 'Video Points', true );
+		if ( ! $video_points ) {
+			$video_points = array();
+		}
+		if ( in_array( $video_id, $video_points ) ) {
+			$points += 1;
+		} else {
+			$points += 5;
+			$video_points[] = $video_id;
+			update_user_meta( $user_id, 'Video Points', $video_points );
+		}
+		update_user_meta( $user_id, 'Royalty Points', $points );
+		return array(
+			'status' => 200,
+			'data' => array( 'points' => $points )
+		);
+	}
+
+
+// Getting Royality Points
+function streamit_get_royalty_points( $request ) {
+		$user_id = $request->get_param( 'user_id' );
+		if ( ! $user_id ) {
+			return array(
+				'status' => 400,
+				'data' => array( 'message' => 'User ID is required.' )
+			);
+		}
+		$points = get_user_meta( $user_id, 'Royalty Points', true );
+		if ( ! $points ) {
+			$points = 0;
+		}
+		return array(
+			'status' => 200,
+			'data' => array( 'points' => $points )
+		);
+	}
+
+
+// Add comment royality points
+add_action( 'comment_post', 'streamit_update_comment_royalty_point', 10, 2 );
+function streamit_update_comment_royalty_point( $comment_id, $comment_approved ) {
+		if ( $comment_approved === 1 ) { // Check if the comment is approved
+			$comment = get_comment( $comment_id );
+			$user_id = $comment->user_id;
+			if ( $user_id ) { // Check if the comment was made by a registered user
+				$points = get_user_meta( $user_id, 'Royalty Points', true );
+				if ( ! $points ) {
+					$points = 0;
+				}
+				$points += 1;
+				update_user_meta( $user_id, 'Royalty Points', $points );
+			}
+		}
+	}
+
+// Delete comment royality points
+add_action( 'delete_comment', 'streamit_delete_comment_royalty_point' , 10, 2 );
+	public function streamit_delete_comment_royalty_point( $comment_id ) {
+		$comment = get_comment( $comment_id );
+		$user_id = $comment->user_id;
+		if ( $user_id ) { // Check if the comment was made by a registered user
+			$points = get_user_meta( $user_id, 'Royalty Points', true );
+			if ( ! $points ) {
+				$points = 0;
+			}
+			$points -= 1;
+			if ( $points < 0 ) {
+				$points = 0;
+			}
+			update_user_meta( $user_id, 'Royalty Points', $points );
+		}
+	}
