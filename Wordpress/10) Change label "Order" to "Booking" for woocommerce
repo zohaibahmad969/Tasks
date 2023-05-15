@@ -1,0 +1,15 @@
+<?php
+
+function change_order_to_booking( $translated_text, $text, $domain ) {
+    if ( $text == 'Order' ) {
+        $translated_text = __( 'Booking', 'woocommerce' );
+    }
+    return $translated_text;
+}
+add_filter( 'gettext', 'change_order_to_booking', 20, 3 );
+
+function change_orders_label( $items ) {
+    $items['orders'] = __( 'Bookings', 'woocommerce' );
+    return $items;
+}
+add_filter( 'woocommerce_account_menu_items', 'change_orders_label' );
