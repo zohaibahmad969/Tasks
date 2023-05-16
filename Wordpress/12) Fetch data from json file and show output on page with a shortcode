@@ -1,0 +1,54 @@
+<?php
+
+// Define the shortcode function to display the post cards
+function display_post_cards_shortcode() {
+    // Read the JSON data from the specified path
+    // $json_file_path = "json_data.json";
+    // $json_data = file_get_contents($json_file_path);
+
+    $json_data = '[
+        {
+            "title": "Post 1",
+            "description": "This is the description of post 1.",
+            "date": "2023-05-15",
+            "image": "https://example.com/post1-image.jpg",
+            "author": "John Doe"
+        },
+        {
+            "title": "Post 2",
+            "description": "This is the description of post 2.",
+            "date": "2023-05-14",
+            "image": "https://example.com/post2-image.jpg",
+            "author": "Jane Smith"
+        }
+    ]';
+
+    $data = json_decode($json_data);
+
+    // Create an empty variable to store the HTML code
+    $html = '';
+
+    // Loop through each post in the data and create HTML code for each post card
+    foreach ($data as $post) {
+        $title = $post->title;
+        $description = $post->description;
+        $date = $post->date;
+        $image = $post->image;
+        $author = $post->author;
+
+        $html .= '<div class="post-card">';
+        $html .= '<img src="' . $image . '" alt="' . $title . '">';
+        $html .= '<div class="post-card-content">';
+        $html .= '<h2>' . $title . '</h2>';
+        $html .= '<p>' . $description . '</p>';
+        $html .= '<small>Posted on ' . $date . ' by ' . $author . '</small>';
+        $html .= '</div>';
+        $html .= '</div>';
+    }
+
+    // Return the HTML code
+    return $html;
+}
+
+// Register the shortcode
+add_shortcode('post_cards', 'display_post_cards_shortcode');
