@@ -1,0 +1,51 @@
+<?php
+
+// Add custom field filter
+add_action('restrict_manage_posts', 'add_custom_field_filter');
+
+function add_custom_field_filter()
+{
+    global $typenow;
+
+    if ($typenow == 'shop_order') {
+        $field_name = 'order_pickup_date';
+
+        // Get the current value of the filter
+        $current_value = isset($_GET[$field_name]) ? $_GET[$field_name] : '';
+
+        // Output the filter HTML
+        echo '<input type="text" name="' . $field_name . '" value="' . $current_value . '" placeholder="Order Pickup Date">';
+    }
+}
+
+
+// Apply custom field filter
+add_filter('parse_query', 'apply_custom_field_filter');
+
+function apply_custom_field_filter($query)
+{
+    global $pagenow, $typenow;
+
+    if ($pagenow == 'edit.php' && $typenow == 'shop_order' && isset($_GET['order_pickup_date'])) {
+        $meta_query = array(
+            array(
+                'key'     => 'order_pickup_date',
+                'value'   => sanitize_text_field($_GET['order_pickup_date']),
+                'compare' => 'LIKE',
+            )
+        );
+
+        $query->set('meta_query', $meta_query);
+    }
+}
+
+// Display custom field value in orders list
+add_action('manage_shop_order_posts_custom_column', 'display_custom_field_value', 10, 2);
+
+function display_custom_field_value($column, $post_id)
+{
+    if ($column == 'order_pickup_date') {
+        $pickup_date = get_post_meta($post_id, 'order_pickup_date', true);
+        echo $pickup_date;
+    }
+}
