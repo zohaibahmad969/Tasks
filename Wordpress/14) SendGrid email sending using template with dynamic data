@@ -1,0 +1,56 @@
+<?php
+
+// Set your SendGrid API key
+$api_key = 'api key here'; // Replace with your SendGrid API key
+
+// Set the SendGrid API endpoint URL
+$url = 'https://api.sendgrid.com/v3/mail/send';
+
+// Set the email data as an array
+$email_data = [
+    'from' => [
+        'email' => 'hello@careassure.com.au',
+    ],
+    'personalizations' => [
+        [
+            'to' => [
+                [
+                    'email' => $_POST['email'],
+                ],
+            ],
+            'dynamic_template_data' => [
+                'userName' => $_POST['Your_name']
+            ],
+        ],
+    ],
+    'template_id' => 'd-1feb6abd23384f63b3f2f945e7194fee', // Replace with your template ID
+];
+
+// Encode the email data as JSON
+$json_data = json_encode($email_data);
+
+// Initialize cURL session
+$ch = curl_init($url);
+
+// Set cURL options
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $json_data);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_HTTPHEADER, [
+    'Authorization: Bearer ' . $api_key,
+    'Content-Type: application/json',
+]);
+
+// Execute the cURL request
+$response = curl_exec($ch);
+
+// Check for cURL errors
+if (curl_errno($ch)) {
+    echo 'cURL Error: ' . curl_error($ch);
+} else {
+    // Close cURL session
+    curl_close($ch);
+
+    header("HTTP/1.1 301 Moved Permanently");
+    header('Location: '.home_url('/').'thank-you?&form=complaint_form'); 
+}
