@@ -86,4 +86,42 @@ jQuery(document).ready(function($) {
 	});
 
 
+
+
+	// International Phone Number
+	  var inputPhone = document.querySelectorAll(".phone-field-only");
+	  var iti_el = $('.iti.iti--allow-dropdown.iti--separate-dial-code');
+	  for(var i = 0; i < inputPhone.length; i++){
+	      leadPhone = intlTelInput(inputPhone[i], {
+	          autoHideDialCode: false,
+	          autoPlaceholder: "aggressive" ,
+	          initialCountry: "auto",
+	          separateDialCode: true,
+	          preferredCountries: ['ru','th'],
+	          customPlaceholder:function(selectedCountryPlaceholder,selectedCountryData){
+	              return ''+selectedCountryPlaceholder.replace(/[0-9]/g,'X');
+	          },
+	          geoIpLookup: function(callback) {
+	              $.get('https://ipinfo.io', function() {}, "jsonp").always(function(resp) {
+	              var countryCode = (resp && resp.country) ? resp.country : "";
+	                callback(countryCode);
+	            });
+	          },
+	          utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/16.0.0/js/utils.js" // just for 
+	      });
+	    
+	      $('.phone-field-only').on("focus click countrychange", function(e, countryData) {
+	          var pl = $(this).attr('placeholder') + '';
+	          var res = pl.replace( /X/g ,'9');
+	          if(res != 'undefined'){
+	              $(this).inputmask(res, {placeholder: "X", clearMaskOnLostFocus: true});
+	          }
+	      }); 
+	  }
+	$('.phone-field-only').on("focusout", function(e, countryData) {
+                var intlNumber = iti.getNumber();
+                console.log(intlNumber);   
+            });
+
+
 });
