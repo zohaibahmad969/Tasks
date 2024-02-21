@@ -56,22 +56,22 @@ jQuery(document).ready(function($) {
 
 
 // OTP digit field and skipping html code
-	$(document).on('input', '.textNumber-field-only', function(e) {
-		var inputValue = $(this).val();
-		var keyCode = e.which || e.keyCode;
-		
-		// Check if the entered character is alphanumeric
-		if (/^[a-zA-Z0-9]$/.test(inputValue)) {
-			// Move focus to the next input field with class ".textNumber-field-only"
-			$(this).next('.textNumber-field-only').focus();
-		} else if (keyCode === 8) { // Backspace key
-			// Move focus to the previous input field with class ".textNumber-field-only"
-			$(this).prev('.textNumber-field-only').focus();
-		} else {
-			// Remove any invalid characters entered
-			$(this).val('');
-		}
-	});
+	$(document).on('keyup', '.textNumber-field-only', function(e) {
+	    var inputValue = $(this).val();
+	    var keyCode = e.which || e.keyCode;
+	    
+	    // Check if the entered character is alphanumeric
+	    if (/^[a-zA-Z0-9]$/.test(inputValue)) {
+	        // Move focus to the next input field with class ".textNumber-field-only"
+	        $(this).next('.textNumber-field-only').focus();
+	    } else if (keyCode === 8) { // Backspace key
+	        // Move focus to the previous input field with class ".textNumber-field-only"
+	        $(this).prev('.textNumber-field-only').focus();
+	    } else {
+	        // Remove any invalid characters entered
+	        $(this).val('');
+	    }
+	  });
 
 
   // Textarea for text, numbers and skipping html code
