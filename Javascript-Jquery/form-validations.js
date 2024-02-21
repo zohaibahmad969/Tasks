@@ -86,7 +86,9 @@ jQuery(document).ready(function($) {
 	});
 
 
-
+// <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/16.0.0/css/intlTelInput.css'>
+//     <script src='https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/16.0.0/js/intlTelInput.min.js'></script>
+//     <script src='https://cdnjs.cloudflare.com/ajax/libs/inputmask/4.0.8/jquery.inputmask.bundle.min.js'></script>
 
 	// International Phone Number
 	  var inputPhone = document.querySelectorAll(".phone-field-only");
