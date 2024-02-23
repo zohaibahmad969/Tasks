@@ -1,7 +1,17 @@
 jQuery(document).ready(function($) {
 
 
-	// Validations
+  // Validations
+
+
+  $('.only-text-allowed').allowedChars({
+	allowed: ' abcdefghijklmnopqrstuvwxyz',
+        caseSensitive: false
+  });
+  $('.only-phone-number-allowed').allowedChars({
+        allowed: '+- 0123456789',
+        caseSensitive: false
+  });
 
   // Textarea maxlength
 	$("textarea.maxlength-textarea").on("input", function() {
